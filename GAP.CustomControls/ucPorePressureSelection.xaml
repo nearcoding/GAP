@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="GAP.CustomControls.ucPorePressureSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" Style="{StaticResource MetroButton}" Width="200" Content="Drilling Exponent (Dxc)" Command="{Binding DrillingExponentCommand}"/>
+        <Button Grid.Row="3" Style="{StaticResource MetroButton}" Width="200" Content="Resistivity" Command="{Binding ResistivityCommand}"/>
+        <Button Grid.Row="5" Style="{StaticResource MetroButton}" Width="200" Content="Sonic" Command="{Binding SonicCommand}"/>
+        <Button Grid.Row="7" Style="{StaticResource MetroButton}" Width="200" Content="Artesian" Command="{Binding ArtesianCommand}"/>
+    </Grid>
+</UserControl>

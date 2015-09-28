@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="GAP.CustomControls.ucPorePressureDrillingExponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:extended="clr-namespace:GAP.CustomControls"    
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="1" Header="Pore Pressure Inputs" Style="{StaticResource MetroGroupBox}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Project"/>
+                <ComboBox Grid.Column="3" Grid.Row="1" ItemsSource="{Binding Projects}" 
+                          SelectedItem="{Binding SelectedProject, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="3" Text="Well"/>
+                <ComboBox Grid.Column="3" Grid.Row="3" ItemsSource="{Binding Wells}" 
+                          SelectedItem="{Binding SelectedWell, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="5" Text="Dataset"/>
+                <ComboBox Grid.Column="3" Grid.Row="5" ItemsSource="{Binding Datasets}" 
+                          SelectedItem="{Binding SelectedDataset, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="7" Text="Sub Dataset (NCT)"/>
+                <ComboBox Grid.Column="3" Grid.Row="7" ItemsSource="{Binding SubDatasets}" 
+                          SelectedItem="{Binding SelectedSubDataset, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="9" Text="Normal Hydrostatic Gradient"/>
+                <extended:ExtendedTextBox Width="225" Height="23" Grid.Column="3"  Grid.Row="9"
+                  Text="{Binding NormalHG,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Column="1" Grid.Row="11" Text="Drilling  Exponent"/>
+                <extended:ExtendedTextBox  Width="225" Height="23" Grid.Column="3"  Grid.Row="11"
+                  Text="{Binding DExponent,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                
+                <TextBlock Grid.Column="1" Grid.Row="13" Text="Eaton's Exponent"/>
+                <extended:ExtendedTextBox  Width="225" Height="23" Grid.Column="3"  Grid.Row="13"
+                  Text="{Binding EatonExponent,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Header="Dataset Properties" Style="{StaticResource MetroGroupBox}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+                    <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Dataset Name" Grid.Row="1" Grid.Column="1"/>
+                <TextBox Text="{Binding CurrentObject.Name,UpdateSourceTrigger=PropertyChanged}" Width="225" Grid.Row="1" Grid.Column="3"/>
+
+                <GroupBox Grid.Row="3" Grid.ColumnSpan="5" Style="{StaticResource MetroGroupBox}" >
+                    <GroupBox.Header>
+                        <TextBlock Text="{DynamicResource CurveProperties}" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <GroupBox.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                                <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                                <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+                            </Grid.RowDefinitions>
+                          
+                            <ContentControl Style="{StaticResource LineStyleProperties}"/>
+                            <ContentControl Style="{StaticResource MarkerStyleProperties}" Grid.Row="2"/>
+                        </Grid>
+                    </GroupBox.Content>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+        <ContentControl Style="{StaticResource SaveCancelButton}" Grid.Row="3"/>
+    </Grid>
+</UserControl>
