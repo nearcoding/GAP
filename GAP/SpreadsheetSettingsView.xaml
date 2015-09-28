@@ -1,0 +1,40 @@
+﻿<base:BaseWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+        x:Class="GAP.SpreadsheetSettingsView"
+        Title="{DynamicResource AutomaticDepth}" Width="320" Height="200" MinHeight="200" MinWidth="320"
+        Style="{StaticResource WindowDialog}"       
+        WindowStartupLocation="CenterScreen">
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{DynamicResource InitialDepth}" Grid.Row="1" Grid.Column="1"/>
+        <xctk:IntegerUpDown Text="{Binding CurrentObject.InitialDepth, FallbackValue=1, UpdateSourceTrigger=PropertyChanged}" Height="23" Grid.Row="1" Grid.Column="3" Width="200"/>
+
+        <TextBlock Text="{DynamicResource FinalDepth}" Grid.Row="3" Grid.Column="1" />
+        <xctk:IntegerUpDown Text="{Binding CurrentObject.FinalDepth, FallbackValue=100, UpdateSourceTrigger=PropertyChanged}" Height="23" Grid.Row="3" Grid.Column="3" Width="200" />
+
+        <TextBlock Text="{DynamicResource Step}" Grid.Row="5" Grid.Column="1"/>
+        <xctk:IntegerUpDown Text="{Binding CurrentObject.Step, FallbackValue=1, UpdateSourceTrigger=PropertyChanged}" Height="23" Grid.Row="5" Grid.Column="3" Width="200"/>
+
+        <ContentControl Style="{StaticResource SaveCancelButton}" Margin="0 0 20 0" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Right" />        
+    </Grid>
+</base:BaseWindow>

@@ -1,0 +1,32 @@
+﻿<base:BaseWindow x:Class="GAP.ImportDataView"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:base="clr-namespace:GAP.ExtendedControls" 
+                Title="{DynamicResource ImportData}" Height="226" Width="660"
+                Style="{StaticResource WindowDialog}" 
+                WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">        
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>         
+        </Grid.RowDefinitions>
+
+        <ContentControl Style="{StaticResource ImportExportLabel}"/>
+
+        <TextBlock FontWeight="Bold" Text="{DynamicResource ImportData_Alert}" Foreground="Red" Grid.Row="2" HorizontalAlignment="Center" FontSize="8"/>
+        <RadioButton Name="rbExact" IsChecked="{Binding IsImportExactDataChecked, Mode=TwoWay}" Content="{DynamicResource ImportData_ExactData}" HorizontalAlignment="Center" Grid.Row="4" />
+        <RadioButton Name="rbAverage" IsChecked="{Binding IsImportAverageDataChecked, Mode=TwoWay}" Content="{DynamicResource ImportData_AverageData}" HorizontalAlignment="Center" Grid.Row="6" />
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" Focusable="False" HorizontalAlignment="Right">
+            <Button Content="{DynamicResource SaveButton}" Style="{StaticResource MetroButton}" Command="{Binding ImportDataCommand}" Margin="0 0 20 0"/>
+            <Button Style="{StaticResource ButtonCancel}"/>
+        </StackPanel>         
+    </Grid>
+</base:BaseWindow>

@@ -1,0 +1,43 @@
+﻿<base:BaseWindow x:Class="GAP.FormationTopImportView"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource ImportFormation}" Height="260" Width="660" MinHeight="220" MinWidth="650" 
+        Style="{StaticResource WindowDialogResize}" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl Style="{StaticResource ImportExportLabel}" Grid.Row="0"/>
+
+        <TextBlock Margin="150 0 0 0" Text="{DynamicResource ImportLithologyData_TitleText}" Grid.Row="2" Grid.Column="3"/>
+        <Grid  Grid.Row="4" Margin="150 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+                <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+                <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{DynamicResource Chart}" VerticalAlignment="Top"/>
+            <ListBox Grid.Column="2"  Width="200" ItemsSource="{Binding Charts,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding ChartName}" IsChecked="{Binding IsChartSelected}" VerticalAlignment="Center"/>                            
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <ContentControl Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" Style="{StaticResource SaveCancelButton}"/>
+    </Grid>
+</base:BaseWindow>

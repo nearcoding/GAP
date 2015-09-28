@@ -1,0 +1,94 @@
+﻿<base:BaseWindow x:Class="GAP.MathFilterView"
+        xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"            
+        x:TypeArguments="BLL:Dataset"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource WindowDialog}"
+        WindowStartupLocation="CenterScreen"
+        Title="{DynamicResource MathFilter}" Height="620" Width="390">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.CustomScrollbars.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>   
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{DynamicResource Project}"/>
+        <ComboBox SelectedItem="{Binding SelectedProject}" HorizontalAlignment="Left"  Grid.Column="2" ItemsSource="{Binding Projects}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+            
+        <TextBlock Grid.Row="2" Text="{DynamicResource Well}"/>
+        <ComboBox SelectedItem="{Binding SelectedWell}" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding Wells}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+        <TextBlock Grid.Row="4" Text="{DynamicResource Dataset}"/>
+        <ComboBox SelectedItem="{Binding SelectedDataset}" Grid.Row="4" Grid.Column="2" ItemsSource="{Binding Datasets}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+        <TextBlock Grid.Row="6" Text="{DynamicResource Filter}"/>
+        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding Filter}"/>
+
+        <TextBlock Grid.Row="8" Text="{DynamicResource NewDataset}"/>
+        <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding CurrentObject.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="10" Text="{DynamicResource SystemNotes}"/>
+        <TextBox Focusable="False" IsReadOnly="True" Style="{StaticResource TextBoxNotes}" Grid.Row="10" Grid.Column="2" Text="{Binding CurrentObject.SystemNotes, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.Resources>
+                <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollbar}">
+                    <Setter Property="Margin" Value="0 0 -3 0"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Width" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock Grid.Row="12" Text="{DynamicResource UserNotes}"/>
+        <TextBox Style="{StaticResource TextBoxNotes}" Grid.Row="12" Grid.Column="2" Text="{Binding CurrentObject.UserNotes, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.Resources>
+                <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollbar}">
+                    <Setter Property="Margin" Value="0 0 -3 0"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Width" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <GroupBox Style="{StaticResource MetroGroupBox}"  Width="360" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3" >
+            <GroupBox.Header>
+                <TextBlock Text="{DynamicResource CurveProperties}" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <StackPanel>
+                <GroupBox Style="{StaticResource LineStyleProperties}"/>
+                <GroupBox Style="{StaticResource MarkerStyleProperties}"/>
+            </StackPanel>   
+        </GroupBox>
+        
+        <ContentControl Style="{StaticResource SaveCancelButton}" Grid.Row="16" Grid.Column="2"/>
+    </Grid>
+</base:BaseWindow>

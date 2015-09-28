@@ -1,0 +1,42 @@
+﻿<base:BaseWindow x:Class="GAP.SelectDataset"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource WindowDialog}"
+        WindowStartupLocation="CenterScreen"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"       
+        Title="Select Dataset" Height="200" Width="350">
+   
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource Project}" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="1" Grid.Column="3" ItemsSource="{Binding Projects}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedItem="{Binding SelectedProject}"/>
+
+        <TextBlock  Grid.Column="1" Text="{DynamicResource Well}" Grid.Row="3" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="3" Grid.Column="3" ItemsSource="{Binding Wells}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedItem="{Binding SelectedWell}"/>
+
+        <TextBlock Text="{DynamicResource Dataset}"  Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="5" Grid.Column="3" ItemsSource="{Binding Datasets}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedItem="{Binding SelectedDataset}"/>
+
+        <StackPanel HorizontalAlignment="Right" Grid.Row="7" Grid.Column="3" Orientation="Horizontal">
+            <Button Content="Select  Dataset [Ctrl+S]" Command="{Binding SelectDatasetCommand}" Style="{StaticResource MetroButton}"/>
+            <Button Content="Cancel [Esc]" Command="{Binding CancelCommand}" Style="{StaticResource MetroButton}" Margin="10 0 0 0"/>
+        </StackPanel>
+    </Grid>
+</base:BaseWindow>

@@ -1,0 +1,29 @@
+﻿<base:BaseWindow x:Class="GAP.AddChartView" 
+        xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+        x:TypeArguments="BLL:Chart"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:GAP.MainUI.ViewModels.ViewModel;assembly=GAP.MainUI.ViewModels"
+        xmlns:ViewModels="clr-namespace:GAP.MainUI.ViewModels;assembly=GAP.MainUI.ViewModels" 
+        Title="{DynamicResource AddChart}" Height="125" Width="370"  MinHeight="125" MinWidth="330"
+        Style="{StaticResource WindowDialog}" 
+        WindowStartupLocation="CenterScreen">
+ 
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{DynamicResource ChartName}" />
+        <base:TextBoxExtended  Grid.Column="2" HorizontalAlignment="Stretch" MaxWidth="500" Text="{Binding CurrentObject.Name, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <ContentControl Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource SaveCancelButton}"/>
+    </Grid>
+</base:BaseWindow>

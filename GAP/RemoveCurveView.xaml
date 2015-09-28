@@ -1,0 +1,70 @@
+﻿<base:BaseWindow x:Class="GAP.RemoveCurveView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:custom="http://nearcoding.com/controls"    
+        xmlns:base="clr-namespace:GAP.ExtendedControls" WindowStartupLocation="CenterScreen"
+        xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+        Title="{DynamicResource RemoveCurves}" Height="520" Width="780">
+    <Window.Resources>
+        <BLL:TrackIDToNameConverter x:Key="TrackIDToNameConverter"/>
+        <BLL:ChartIDToNameConverter x:Key="ChartIDToNameConverter"/>
+        <BLL:WellIDToNameConverter x:Key="WellIDToNameConverter"/>
+        <BLL:ProjectIDToNameConverter x:Key="ProjecIDToNameConverter"/>
+        <BLL:DatasetIDToNameConverter x:Key="DatasetIDToNameConverter"/>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{DynamicResource CurveRemove_TitleText}" FontWeight="Bold"/>
+        <custom:ExtendedDataGrid CanUserSortColumns="True" Grid.Row="2" Style="{StaticResource MetroDataGrid}"  ItemsSource="{Binding CurvesList}" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <CheckBox IsChecked="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext.AllRecordsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsCurveSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate> 
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTextColumn Binding="{Binding DatasetCurveName,Converter={StaticResource DatasetIDToNameConverter}}" Width="1.5*">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource Curve/DatasetName}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RefTrack, Converter={StaticResource TrackIDToNameConverter}}" Width="*" >
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource RefTrack}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RefChart,Converter={StaticResource ChartIDToNameConverter}}" Width="*">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource RefChart}"/>                                   
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RefWell,Converter={StaticResource WellIDToNameConverter}}" Width="*">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource RefWell}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RefProject, Converter={StaticResource ProjecIDToNameConverter}}" Width="*" >
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource RefProject}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </custom:ExtendedDataGrid>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Command="{Binding SaveCommand}" Style="{StaticResource MetroButton}" Margin="0 0 20 0"  Content="{Binding SaveButtonText, UpdateSourceTrigger=PropertyChanged, FallbackValue=Save[Ctrl+S]}" ></Button>
+            <Button Style="{StaticResource ButtonCancel}"/>
+        </StackPanel>
+    </Grid>
+</base:BaseWindow>

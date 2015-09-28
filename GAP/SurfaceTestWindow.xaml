@@ -1,0 +1,22 @@
+﻿<Window x:Class="GAP.SurfaceTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"      ShowInTaskbar="False" Opacity="0.001"
+        xmlns:SciChart="http://schemas.abtsoftware.co.uk/scichart"
+        xmlns:extended="http://nearcoding.com/controls"
+        Title="" Height="1024" Width="768">
+    <Grid>
+        <extended:SciChartExtended 
+                     SciChart:ThemeManager.Theme="BrightSpark"
+                     HorizontalAlignment="Stretch" 
+                     VerticalAlignment="Stretch"   
+                     XAxes="{Binding XAxisCollection, UpdateSourceTrigger=PropertyChanged}"
+                     YAxis="{Binding YAxis,UpdateSourceTrigger=PropertyChanged}"
+                     x:Name="sciChartExtended"
+                     Annotations="{Binding Annotations,UpdateSourceTrigger=PropertyChanged}"
+                     AllowDrop="True" 
+                     Margin="0 0 6 0" 
+                     RenderableSeries="{Binding CurveRenderableSeries,UpdateSourceTrigger=PropertyChanged}"
+                     ChartModifier="{Binding ChartModifier, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>

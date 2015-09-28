@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="GAP.Custom_Controls.ucTrackItemsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:customControls="clr-namespace:GAP.Custom_Controls"
+             xmlns:grid="clr-namespace:GAP.HelperClasses"
+             xmlns:SciChart="http://schemas.abtsoftware.co.uk/scichart"
+             xmlns:converter="clr-namespace:GAP.Converters"
+             xmlns:example="clr-namespace:GAP.HelperClasses"
+             xmlns:extension="clr-namespace:GAP.ExtendedControls"
+             xmlns:extended="http://nearcoding.com/controls"
+             xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+             x:Name="ucTrackItemsControl1" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.CustomScrollbars.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.MainScreenScrollbar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converter:GridLengthConverter x:Key="GridLengthValueConverter"/>
+            <BLL:ScrollViewerHeightConverter x:Key="ScrollViewerHeightConverter"/>
+            <converter:TrackColorConverter x:Key="TrackColorConverter"/>
+            <BLL:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+            <BLL:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
+            <BLL:BooleanToVisibilityConveter x:Key="BoolToVisibilityConverter"/>
+            <BLL:ColourToBrushConverter x:Key="ColourToBrushConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer Height="{Binding ElementName=ucTrackItemsControl1,Path=ActualHeight, Converter={StaticResource ScrollViewerHeightConverter}}"
+                       x:Name="ScrollViewer1" VerticalAlignment="Top" 
+                      Style="{StaticResource MainScrollViewer}" Focusable="False"                                
+                  VerticalScrollBarVisibility="Hidden">
+        <StackPanel Orientation="Horizontal">
+            <!--<Grid Visibility="{Binding ElementName=TabCharts, Path=HasTracks, Converter={StaticResource BoolToVisibilityConverter}}">-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                    <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                </Grid.ColumnDefinitions>
+                <ItemsControl ItemsSource="{Binding}" x:Name="Control1">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid x:Name="OuterGrid" grid:GridHelper.ColumnCount="{Binding ElementName=TabCharts,Path= DataContext.SelectedChart.Tracks.Count}"
+                          grid:GridHelper.RowCount="1" 
+                          grid:GridHelper.MinimumWidth="200"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="Grid.Column" Value="{Binding TrackObject.DisplayIndex}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="InnerGrid" HorizontalAlignment="Stretch"  Height="{Binding ElementName=Control1,Path=ActualHeight}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition MinWidth="140" Width="{Binding TrackObject.Width, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource GridLengthValueConverter}}"/>
+                                    <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                                </Grid.ColumnDefinitions>
+                                <GroupBox Background="{Binding IsTrackSelected,Converter={StaticResource TrackColorConverter},UpdateSourceTrigger=PropertyChanged}"  
+                                VerticalAlignment="Top" Height="{Binding Source={x:Reference ScrollViewer1},Path=ActualHeight}" Style="{StaticResource GroupBoxWithCenteredHeader}"
+                                HorizontalAlignment="Stretch" Header="{Binding TrackObject.Name}">
+                                    <GroupBox.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <ScrollViewer Height="52" Visibility="{Binding HasCurves,Converter={StaticResource BoolToVisibilityConverter},UpdateSourceTrigger=PropertyChanged}">
+                                                <ItemsControl ItemsSource="{Binding Curves,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <customControls:CustomChartLegend 
+                                                                 IsSeriesVisible="{Binding IsSeriesVisible, UpdateSourceTrigger=PropertyChanged}"
+                                                                 MinValue="{Binding MinValue,UpdateSourceTrigger=PropertyChanged}"
+                                                                 MaxValue="{Binding MaxValue, UpdateSourceTrigger=PropertyChanged}"
+                                                                 Visibility="{Binding Visibility,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </ScrollViewer>
+
+                                            <extended:SciChartExtended 
+                                            RenderPriority="Low"
+                                            Grid.Row="1"
+                                            HorizontalAlignment="Stretch" 
+                                            VerticalAlignment="Stretch"   
+                                            Chart="{Binding TrackObject.RefChart,UpdateSourceTrigger=PropertyChanged}"  
+                                            Track="{Binding TrackObject.ID}" 
+                                            Drop="CustomChart1_Drop" 
+                                            Padding="0"  
+                                            XAxes="{Binding XAxisCollection, UpdateSourceTrigger=PropertyChanged}"
+                                            YAxis="{Binding YAxis,UpdateSourceTrigger=PropertyChanged}"
+                                            x:Name="sciChartExtended"
+                                            Annotations="{Binding Annotations,UpdateSourceTrigger=PropertyChanged}"
+                                            AllowDrop="True" 
+                                            Margin="0 0 6 0" 
+                                            SciChart:ThemeManager.Theme="{Binding ElementName=TabCharts,Path= DataContext.SelectedTrackTheme}"
+                                            RenderableSeries="{Binding CurveRenderableSeries,UpdateSourceTrigger=PropertyChanged}"
+                                            ChartModifier="{Binding ChartModifier, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                        </Grid>
+                                    </GroupBox.Content>
+                                </GroupBox>
+                                <GridSplitter Width="5"  VerticalAlignment="Stretch"  Focusable="False" Background="Gray"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <Button  Grid.Column="2" Background="Transparent" Focusable="False" ToolTip="{DynamicResource AddTrack}" 
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=Window},Path=DataContext.AddTrackCommand}" 
+                    Style="{StaticResource ButtonWithNoStyle}" BorderThickness="0" Width="400" Height="100"  
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Button.Content>
+                    <Image Source="../Images/AddTrack.png"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

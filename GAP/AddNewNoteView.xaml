@@ -1,0 +1,23 @@
+﻿<base:BaseWindow x:Class="GAP.AddNewNoteView"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="{DynamicResource AddNewNote}" Height="300" Width="300" MinHeight="300" MinWidth="300"          
+        FocusManager.FocusedElement="{Binding ElementName=txtNotes}"
+        Style="{StaticResource WindowDialogResize}" 
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+
+        <TextBox VerticalAlignment="Stretch" VerticalContentAlignment="Top" x:Name="txtNotes" MaxHeight="210" Height="210" Width="280" MaxWidth="280"  TextWrapping="Wrap"
+                 AcceptsReturn="True" VerticalScrollBarVisibility="Auto" 
+                 Text="{Binding NotesText, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Stretch"></TextBox>
+        <ContentControl Style="{StaticResource SaveCancelButton}" HorizontalAlignment="Right" Grid.Row="2"/>
+
+    </Grid>
+</base:BaseWindow>

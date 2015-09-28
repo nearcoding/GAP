@@ -1,0 +1,128 @@
+﻿<base:BaseWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"      
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" x:Class="GAP.MaintainSpreadsheetView"
+        Title="{Binding Title}" Width="550" MinWidth="550" 
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:customControls="http://nearcoding.com/controls"
+        xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+        FocusManager.FocusedElement="{Binding ElementName=DataGrid1}"
+        Style="{StaticResource WindowDialog}" MinHeight="602"
+        WindowStartupLocation="CenterScreen" Height="602" >
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding CopyCommand}" Key="C" Modifiers="Control"/>
+        <KeyBinding Command="{Binding PasteCommand}" Key="V" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CutCommand}" Key="X" Modifiers="Control"/>
+        <KeyBinding Command="{Binding UndoCommand}" Key="Z" Modifiers="Control"/>
+        <KeyBinding Command="{Binding RedoCommand}" Key="Y" Modifiers="Control"/>
+    </Window.InputBindings>
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <BLL:ProjectIDToNameConverter x:Key="ProjectIDToNameConverter"/>
+        <BLL:WellIDToNameConverter x:Key="WellIDToNameConverter"/>
+    </Window.Resources>
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <Image Visibility="{Binding IsDirty, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, 
+                Converter={StaticResource BoolToVisibilityConverter}}" 
+                  Source="{StaticResource MyImage}"/>
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+    <Grid x:Name="grid_Main" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <ToolBar ToolBarTray.IsLocked="True" Background="#FFF4F4F4" HorizontalAlignment="Stretch" VerticalAlignment="Top" VerticalContentAlignment="Top" IsEnabled="True" >
+            <Button Name="btnAutoDepth" ToolTip="{DynamicResource AutomaticDepth}" VerticalAlignment="Center" Command="{Binding AutomaticDepthScreenCommand}">
+                <Image Source="Images\imgAutoDepth.png" ToolTip="{DynamicResource AutomaticDepth}" Name="Image1" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnCut" ToolTip="{DynamicResource Cut}" VerticalAlignment="Center" Command="{Binding CutCommand}">
+                <Image Source="Images\imgCut.png" Name="Image2" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnCopy" ToolTip="{DynamicResource CopyToCSV}" VerticalAlignment="Center" Command="{Binding CopyCommand}">
+                <Image Source="Images\imgCopy.png" Name="Image3" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnPaste" ToolTip="{DynamicResource Paste}" VerticalAlignment="Center" Command="{Binding PasteCommand}">
+                <Image Source="Images\imgPaste.png" Name="Image4" Height="40" Width="40"></Image>
+            </Button>
+
+            <Button Name="btnDelete" ToolTip="{DynamicResource Delete}" VerticalAlignment="Center" Command="{Binding DeleteCommand}">
+                <Image Source="Images\imgDelete.png" Name="Image5" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnUndo" ToolTip="{DynamicResource Undo}" VerticalAlignment="Center" Command="{Binding UndoCommand}">
+                <Image Source="Images\imgUndo.png" Name="Image7" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnRedo" ToolTip="{DynamicResource Redo}" VerticalAlignment="Center" Command="{Binding RedoCommand}">
+                <Image Source="Images\imgRedo.png" Name="Image8" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnIncDecimal" ToolTip="{DynamicResource IncreaseDecimal}" VerticalAlignment="Top" Command="{Binding IncreaseDecimalCommand}">
+                <Image Source="Images\imgIncreaseDecimal.png" Name="Image9" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnDecDecimal" ToolTip="{DynamicResource DecreaseDecimal}" VerticalAlignment="Center" Command="{Binding DecreaseDecimalCommand}">
+                <Image Source="Images\imgDecreaseDecimal.png" Name="Image10" Height="40" Width="40"></Image>
+            </Button>
+            <Button Name="btnExport" ToolTip="{DynamicResource ExportToExcel}" VerticalAlignment="Center" Command="{Binding ExportCommand}">
+                <Image Source="Images\imgExcel.png" Name="Image6" Height="40" Width="40"></Image>
+            </Button>
+        </ToolBar>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Left">
+                <TextBlock Text="{DynamicResource ToggleAuto-Rows}" Margin="10 0 0 0" FontWeight="Bold"/>
+                <RadioButton Content="{DynamicResource On}" IsChecked="{Binding IsAutoRowsEnabled, Mode=TwoWay}" Margin="20 5 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <RadioButton Content="{DynamicResource Off}" IsChecked="{Binding IsAutoRowsDisabled, Mode=TwoWay}" Margin="20 5 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <TextBlock Text="{DynamicResource DatasetInformation}" FontWeight="Bold" Margin="10 50 0 0"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource Project}" Margin="20 5 0 0"/>
+                    <TextBlock Name="lblProject" FontWeight="Bold" Text="{Binding CurrentObject.RefProject, Converter={StaticResource ProjectIDToNameConverter}}" Margin="10 5 0 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                    <TextBlock Text="{DynamicResource Well}" Margin="10 10 0 0" />
+                    <TextBlock Name="lblWell" FontWeight="Bold" Text="{Binding CurrentObject.RefWell, Converter={StaticResource WellIDToNameConverter}}" Margin="10 10 0 0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <customControls:ExtendedDataGrid x:Name="DataGrid1" 
+                        AutoGenerateColumns="False" Grid.Column="2" CanUserDeleteRows="False" SelectionMode="Extended"
+                        SelectedItemsList="{Binding SelectedItemsList, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"                     
+                        ItemsSource="{Binding CurrentObject.DepthAndCurves,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" CanUserAddRows="True"
+                        ClipboardCopyMode="ExcludeHeader" SelectedIndex="{Binding SelectedIndex}" CellEditEnding="DataGrid1_CellEditEnding"
+                        IsReadOnly="False"  Height="444" VerticalAlignment="Top"  
+                        HorizontalAlignment="Center"  HeadersVisibility="Column" Style="{StaticResource MetroDataGrid}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Depth}" Width="100">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding  DataContext.DepthHeader,  RelativeSource={RelativeSource AncestorType=Window}}"></TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Curve}" Width="*">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="{Binding DataContext.CurveHeader, RelativeSource={RelativeSource AncestorType=Window}}"></TextBlock>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="RowEditEnding">
+                        <i:InvokeCommandAction Command="{Binding RowEditEndingCommand}"></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </customControls:ExtendedDataGrid>
+        </Grid>
+        <ContentControl Grid.Row="4" Style="{StaticResource SaveCancelButton}"/>       
+    </Grid>
+</base:BaseWindow>

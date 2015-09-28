@@ -1,0 +1,4 @@
+C:\Repo\GAP\gap_repository\Helpers\bin\Release\GAP.Helpers.dll
+C:\Repo\GAP\gap_repository\Helpers\bin\Release\GAP.Helpers.pdb
+C:\Repo\GAP\gap_repository\Helpers\obj\Release\GAP.Helpers.dll
+C:\Repo\GAP\gap_repository\Helpers\obj\Release\GAP.Helpers.pdb

@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="GAP.Custom_Controls.ucSolutionExplorer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:bll="clr-namespace:GAP.BL;assembly=GAP.BL"
+             mc:Ignorable="d" Background="White" HorizontalAlignment="Stretch"
+             Loaded="ucSolutionExplorer_Loaded"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BLL:SubDatasetTextConverter x:Key="SubDatasetTextConverter"/>
+            <BLL:ColourToColorConverter x:Key="ColorToColorConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <TreeView VirtualizingStackPanel.IsVirtualizing="False" HorizontalContentAlignment="Stretch"
+              PreviewMouseDown="TreeViewOfProjects_PreviewMouseDown"
+              PreviewMouseMove="TreeViewOfProjects_PreviewMouseMove"
+              MouseRightButtonDown="TreeViewOfProjects_MouseRightButtonDown"
+              SelectedItemChanged="TreeViewOfProjects_OnSelectedItemChanged" Name="TreeView1" 
+                            SizeChanged="TreeViewOfProjects_OnSizeChanged"  ItemsSource="{Binding Projects}">
+        <TreeView.Resources>
+          
+            <HierarchicalDataTemplate DataType="{x:Type bll:Project}" ItemsSource="{Binding Wells}">
+                <TextBlock  TextWrapping="WrapWithOverflow" MaxWidth="200" HorizontalAlignment="Stretch" Text="{Binding Name}" x:Name="TextBlockProject" Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
+                    <TextBlock.ContextMenu>
+                        <ContextMenu DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}"  >
+                            <MenuItem  Command="{Binding FileMenu.FileEditProjectCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource EditProject}"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <MenuItem Command="{Binding FileMenu.FileDeleteProjectCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource DeleteProject}"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </TextBlock.ContextMenu>
+            </TextBlock>
+            </HierarchicalDataTemplate>
+            <HierarchicalDataTemplate DataType="{x:Type bll:Well}" ItemsSource="{Binding Datasets}">
+                <TextBlock TextWrapping="WrapWithOverflow" MaxWidth="200" HorizontalAlignment="Stretch" Text="{Binding Name}" Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
+                    <TextBlock.ContextMenu>
+                        <ContextMenu DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+                            <MenuItem Command="{Binding FileMenu.FileEditWellCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource EditWell}"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem  Command="{Binding FileMenu.FileDeleteWellCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource DeleteWell}"></TextBlock>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </TextBlock.ContextMenu>
+                </TextBlock>
+            </HierarchicalDataTemplate>
+            <HierarchicalDataTemplate DataType="{x:Type bll:Dataset}" ItemsSource="{Binding SubDatasets}">
+                <TextBlock  TextWrapping="WrapWithOverflow" MaxWidth="200" HorizontalAlignment="Stretch" Text="{Binding Name}" Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
+                    <TextBlock.ContextMenu>
+                        <ContextMenu DataContext="{Binding PlacementTarget.Tag,RelativeSource={RelativeSource Self}}">
+                            <MenuItem Command="{Binding FileMenu.FileEditDatasetCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource EditDataset}"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem Command="{Binding FileMenu.FileEditSpreadsheetCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource EditSpreadsheet}"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem Command="{Binding FileMenu.FileDeleteDatasetCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="{DynamicResource DeleteDataset}"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </TextBlock.ContextMenu>
+               </TextBlock>
+            </HierarchicalDataTemplate>
+
+            <DataTemplate DataType="{x:Type bll:SubDataset}">
+                <TextBlock TextWrapping="WrapWithOverflow" MaxWidth="200" HorizontalAlignment="Stretch" Foreground="{Binding LineColor,Converter={StaticResource ColorToColorConverter}}"  FontStyle="Italic"  Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
+                    <TextBlock.Text>
+                        <MultiBinding Converter="{StaticResource SubDatasetTextConverter}">
+                            <Binding Path="Name"/>
+                            <Binding Path="IsNCT"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                    <TextBlock.ContextMenu>
+                        <ContextMenu DataContext="{Binding PlacementTarget.Tag,RelativeSource={RelativeSource Self}}">
+                            <MenuItem Command="{Binding FileMenu.FileEditSubDatasetSpreadsheetCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="View Spreadsheet"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <MenuItem Command="{Binding FileMenu.FileDeleteSubDatasetCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Delete SubDataset"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <MenuItem Command="{Binding FileMenu.FileEditSubDatasetCommand}">
+                                <MenuItem.Header>
+                                    <TextBlock Text="Edit SubDataset"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </TextBlock.ContextMenu>
+               </TextBlock>
+            </DataTemplate>
+        </TreeView.Resources>
+        <TreeView.ItemContainerStyle>
+            <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource MetroTreeViewItem}">
+                <Setter Property="IsExpanded" Value="True"></Setter>
+            </Style>
+        </TreeView.ItemContainerStyle>
+    </TreeView>
+</UserControl>

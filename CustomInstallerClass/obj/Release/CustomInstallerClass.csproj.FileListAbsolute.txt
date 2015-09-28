@@ -1,0 +1,6 @@
+C:\Repo\GAP\gap_repository\CustomInstallerClass\bin\Release\CustomInstallerClass.dll
+C:\Repo\GAP\gap_repository\CustomInstallerClass\bin\Release\CustomInstallerClass.pdb
+C:\Repo\GAP\gap_repository\CustomInstallerClass\obj\Release\CustomInstallerClass.Properties.Resources.resources
+C:\Repo\GAP\gap_repository\CustomInstallerClass\obj\Release\CustomInstallerClass.csproj.GenerateResource.Cache
+C:\Repo\GAP\gap_repository\CustomInstallerClass\obj\Release\CustomInstallerClass.dll
+C:\Repo\GAP\gap_repository\CustomInstallerClass\obj\Release\CustomInstallerClass.pdb

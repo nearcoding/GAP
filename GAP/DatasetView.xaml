@@ -1,0 +1,24 @@
+﻿<base:BaseWindow x:Class="GAP.DatasetView"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:base="clr-namespace:GAP.ExtendedControls"
+                 xmlns:uc="clr-namespace:GAP.Custom_Controls"
+                 xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                 Title="{Binding Title}"
+                 Width="410" MinWidth="380"
+                 Height="650" MinHeight="580"     
+                 Style="{StaticResource WindowDialog}"
+                 WindowStartupLocation="CenterScreen"
+                 xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+                 x:TypeArguments="BLL:Dataset">
+   
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <ContentControl Style="{StaticResource RectangleAsterisk}"/>
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <uc:ucDataset x:Name="ucDatasetControl"/>
+    </Grid>
+
+</base:BaseWindow>

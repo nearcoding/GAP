@@ -1,0 +1,134 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    x:Class="TextBoxBasics"
+                    xmlns:base="clr-namespace:GAP.ExtendedControls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.CustomScrollbars.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type base:TextBoxExtended}">
+        <Setter Property="Height" Value="23"/>
+        <Setter Property="MinHeight" Value="23"/>
+        <Setter Property="MaxHeight" Value="23"/>
+        <Setter Property="MaxWidth" Value="220"/>
+        <Setter Property="MinWidth" Value="220"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="TextBox" x:Key="TextBoxBaseStyle">
+        <Setter Property="Height" Value="23"/>
+        <Setter Property="MinHeight" Value="23"/>
+        <Setter Property="MaxHeight" Value="23"/>
+        <Setter Property="MaxWidth" Value="220"/>
+        <Setter Property="MinWidth" Value="220"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="TextBox" x:Key="TextBoxBrowse">
+        <Setter Property="MinWidth" Value="300" />
+        <Setter Property="MaxWidth" Value="300" />
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Focusable" Value="False"/>
+    </Style>
+
+    <Style  TargetType="{x:Type TextBox}" x:Key="TextBase" BasedOn="{StaticResource TextBoxBaseStyle}">
+        <Setter Property="MinHeight" Value="26"/>
+        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBoxReadOnly" >
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="MinHeight" Value="26"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBoxMultiLine" BasedOn="{StaticResource TextBoxBaseStyle}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="AcceptsReturn" Value="True"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="MaxWidth" Value="250"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBoxMultiLineReadOnly" BasedOn="{StaticResource TextBoxMultiLine}">
+        <Setter Property="IsReadOnly" Value="True"/>
+    </Style>
+  
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBoxInputStyle" BasedOn="{StaticResource TextBoxBaseStyle}">
+        <Setter Property="MinHeight" Value="26"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="TextBoxSearch">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <!--<Setter Property="ItemContainerStyle" Value="{StaticResource ListBoxItemSelectOnMouseOverStyle}"/>-->
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border x:Name="Bd" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <Popup x:Name="PART_Popup" StaysOpen="False">
+                            <ListBox x:Name="PART_ListBox" HorizontalContentAlignment="Stretch"/>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--<Style TargetType="{x:Type TextBox}" x:Key="TextBoxSearch">
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Text" Value="Enter your search terms here..."/>
+        <Setter Property="Height" Value="22"/>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Text" Value=""/>
+            </Trigger>
+             
+        </Style.Triggers>
+    </Style>-->
+    
+    <Style TargetType="TextBox" x:Key="TextBoxNotes">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="MaxWidth" Value="220"/>
+        <Setter Property="MinWidth" Value="220"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="AcceptsReturn" Value="True"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>        
+    </Style>
+    <!--<TextBox.Resources>
+        <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollbar}">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Width" Value="10"/>
+        </Style>
+    </TextBox.Resources>-->
+    <Style TargetType="TextBox" x:Key="TextBoxNotesExpanded">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="AcceptsReturn" Value="True"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>              
+    </Style>
+</ResourceDictionary>

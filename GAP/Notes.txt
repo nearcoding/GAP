@@ -1,0 +1,19 @@
+﻿1. Reason for using BLL projects and well libraries  to bind  in tree view?
+
+We are doing this because we have loaded all the related data from the file into the memory, Now we are just using 
+that in-memory data
+
+2. How entites work in the application
+
+All entities are of type ExtendedBindingList which will raise the event upon adding, removing and changing any element in the 
+collection.
+
+Reason for making the design in this way because there could be several ways a object make entry into the collection
+like undo-ing and redo-ing could make the impact in the application, so there must be a single entry point for all where we 
+could do the basic things that we need to do to make it work
+
+Whenever an object added to the collection, we initializing undo-redo operation, if that addition is because of some chain reaction 
+like adding  a project which further has several wells in it then we used to check an object name UndoRedoLiveObject
+
+Only actual entity that initialize the  effect has the authority of creating the live object rest will just be added to its
+Multiple collection which actually is a queue to know the sequence of element being added or removed

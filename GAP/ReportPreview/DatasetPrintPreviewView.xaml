@@ -1,0 +1,13 @@
+﻿<Window x:Class="GAP.ReportPreview.DatasetPrintPreviewView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:report="clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms"
+        
+    WindowState="Maximized"
+        Title="Dataset Print Preview" Height="300" Width="300">
+    <Grid Focusable="False">
+        <WindowsFormsHost >
+            <report:CrystalReportViewer ToolPanelView="None"  ShowGroupTreeButton="False"  x:Name="ReportViewer1"/>
+        </WindowsFormsHost>
+    </Grid>
+</Window>

@@ -1,0 +1,102 @@
+﻿<base:BaseWindow x:Class="GAP.CustomizeToolbarView"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource CustomizeToolbar}"  Style="{StaticResource WindowDialogResize}" WindowStartupLocation="CenterScreen">
+    <Window.InputBindings>
+        <KeyBinding Key="I" Modifiers="Control" Command="{Binding InsertSeparatorCommand}"></KeyBinding>
+    </Window.InputBindings>
+
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontWeight="Bold" Text="{DynamicResource ItemsAvailable}" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock FontWeight="Bold" Text="{DynamicResource ItemsInTheToolbox}" HorizontalAlignment="Center" Grid.Column="4"></TextBlock>
+
+        <ListBox ItemsSource="{Binding AvailableToolbarItems}" Grid.Row="2" SelectedItem="{Binding SelectedAvailableItem}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="60" Height="40" Source="{Binding Image}"/>
+                        <TextBlock VerticalAlignment="Center" Text="{Binding DisplayText}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Column="2" VerticalAlignment="Center" Grid.Row="2">
+            <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="45" Width="50"  Command="{Binding AddItemToToolboxCommand}">
+                <Button.Content>
+                    <Image Source="../Images/MoveToRight.png"/>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource RoundButtonWithAccentBackground}" Command="{Binding AddAllItemsToToolboxCommand}" Height="45" Width="50"  Margin="0 10 0 10">
+                <Button.Content>
+                    <Image Source="../Images/MoveAllToRight.png"/>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="45" Width="50"  Command="{Binding RemoveItemFromToolboxCommand}" Margin="0 0 0 10">
+                <Button.Content>
+                    <Image Source="../Images/MoveToLeft.png"/>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource RoundButtonWithAccentBackground}"  Height="45" Width="50"  Command="{Binding RemoveAllItemsFromToolboxCommand}" Margin="0 0 0 10">
+                <Button.Content>
+                    <Image Source="../Images/MoveAllToLeft.png"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+
+        <ListBox x:Name="ListBoxToolbox"  AllowDrop="True" ItemsSource="{Binding ToolbarItems,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               SelectedItem="{Binding SelectedToolbarItem}"  Grid.Column="4" Grid.Row="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="60" Height="40" Source="{Binding Image}"/>
+                        <TextBlock VerticalAlignment="Center" Text="{Binding DisplayText}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel VerticalAlignment="Center" Grid.Column="6" Grid.Row="2" Margin="0 10 0 0">
+            <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="45" Width="50" Margin="0 0 0 10"  ToolTip="Up" Command="{Binding UpCommand}">
+                <Button.Content>
+                    <Image Source="../Images/UpArrow.png"/>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="45" Width="50" Margin="0 0 0 10"  ToolTip="Down" Command="{Binding DownCommand}">
+                <Button.Content>
+                    <Image Source="../Images/DownArrow.png"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <!--<StackPanel Grid.Column="6" VerticalAlignment="Center" Grid.Row="2" Margin="0 10 0 0">
+            <Button Style="{StaticResource ButtonUpRoundStyle}" Command="{Binding ButtonUpItemCommand}" Width="50" Height="45" Margin="0 0 0 10"></Button>
+            <Button Style="{StaticResource ButtonDownRoundStyle}" Command="{Binding ButtonDownItemCommand}" Width="50" Height="45" Margin="0 0 0 10"></Button>
+        </StackPanel>-->
+
+        <StackPanel  Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Margin="0 0 10 0" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <Button Margin="0 0 20 10" Width="150" Height="35" Style="{StaticResource MetroButton}" HorizontalAlignment="Left" Content="{DynamicResource InsertSeparatorButton}" Command="{Binding InsertSeparatorCommand}"/>
+                <Button Margin="0 0 20 10" Width="160" Height="35" Style="{StaticResource MetroButton}" HorizontalAlignment="Left" Content="{DynamicResource RemoveSeparatorButton}" Command="{Binding RemoveSeparatorCommand}"/>
+            </StackPanel>
+            <ContentControl Style="{StaticResource SaveCancelButton}"/>
+          
+        </StackPanel>
+    </Grid>
+</base:BaseWindow>

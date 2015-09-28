@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{914D1C2B-CD23-4E72-93EB-586DAEEDEC55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAP.MainUI.ViewModels</RootNamespace>
+    <AssemblyName>GAP.MainUI.ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abt.Controls.SciChart.Wpf, Version=3.32.0.6026, Culture=neutral, PublicKeyToken=b55dd9efe817e823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GAP\GAP_Clone\GAP\bin\Debug\Abt.Controls.SciChart.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net20\Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net40\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net40\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net40\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net40\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net40\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net40\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading">
+      <HintPath>..\packages\Rx-XAML.2.2.5\lib\net40\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\DepthAndCurvesToDataSeriesConverter.cs" />
+    <Compile Include="Helpers\AddDataSetEquation.cs" />
+    <Compile Include="Helpers\AnnotationsToTrack.cs" />
+    <Compile Include="Helpers\ChartRemoveInfo.cs" />
+    <Compile Include="Helpers\ChartSourceForMultipleSelection.cs" />
+    <Compile Include="Helpers\CurveRemoveInfo.cs" />
+    <Compile Include="Helpers\DatasetManager.cs" />
+    <Compile Include="Helpers\DefaultChartCollection.cs" />
+    <Compile Include="Helpers\DoubleDottedLineRenderableSeries.cs" />
+    <Compile Include="Helpers\DoubleLineRenderableSeries.cs" />
+    <Compile Include="Helpers\ExcelImporter.cs" />
+    <Compile Include="Helpers\InfoData.cs" />
+    <Compile Include="Helpers\ISendMessage.cs" />
+    <Compile Include="Helpers\LinesEnumerableClass.cs" />
+    <Compile Include="Helpers\NInjectBindings.cs" />
+    <Compile Include="Helpers\ReadResource.cs" />
+    <Compile Include="Helpers\SendMessage.cs" />
+    <Compile Include="Helpers\ThemeInfo.cs" />
+    <Compile Include="Helpers\TrackRemoveInfo.cs" />
+    <Compile Include="Helpers\TrackSourceForMultipleSelection.cs" />
+    <Compile Include="Helpers\WaitCursor.cs" />
+    <Compile Include="Helpers\WITSMLImporter.cs" />
+    <Compile Include="Helpers\WriteFamilyFile.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AddNewNoteViewModel.cs" />
+    <Compile Include="ViewModel\AddRemoveFormationTopViewModel.cs" />
+    <Compile Include="ViewModel\AddRemoveLithologyViewModel.cs" />
+    <Compile Include="ViewModel\EquationViewModel.cs" />
+    <Compile Include="ViewModel\OverburdenGradientViewModel.cs" />
+    <Compile Include="ViewModel\PorePressureDrillingExponentViewModel.cs" />
+    <Compile Include="ViewModel\PorePressureViewModel.cs" />
+    <Compile Include="ViewModel\RemoveChartViewModel.cs" />
+    <Compile Include="ViewModel\ChartTrackPropertiesBaseViewModel.cs" />
+    <Compile Include="ViewModel\CurvePrintingViewModel.cs" />
+    <Compile Include="ViewModel\CustomizeToolbarViewModel.cs" />
+    <Compile Include="ViewModel\DatasetBaseViewModel.cs" />
+    <Compile Include="Helpers\DatasetImportInfo.cs" />
+    <Compile Include="Helpers\GlobalSerializer.cs" />
+    <Compile Include="Helpers\ProjectsAndWells.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AverageAndExactOrCloserValueViewModel.cs" />
+    <Compile Include="ViewModel\DatasetPrintingViewModel.cs" />
+    <Compile Include="ViewModel\AddEquationViewModel.cs" />
+    <Compile Include="ViewModel\DatasetViewModel.cs" />
+    <Compile Include="ViewModel\GoToMarkViewModel.cs" />
+    <Compile Include="ViewModel\HelpViewModel.cs" />
+    <Compile Include="ViewModel\LineEditorViewModel.cs" />
+    <Compile Include="ViewModel\LinePropertiesViewModel.cs" />
+    <Compile Include="Helpers\ChartManager.cs" />
+    <Compile Include="Helpers\CurveManager.cs" />
+    <Compile Include="Helpers\FormationManager.cs" />
+    <Compile Include="Helpers\LithologyManager.cs" />
+    <Compile Include="Helpers\TrackManager.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MathFilterViewModel.cs" />
+    <Compile Include="ViewModel\ProjectViewModel.cs" />
+    <Compile Include="ViewModel\SelectDatasetViewModel.cs" />
+    <Compile Include="ViewModel\ShalePointFilterViewModel.cs" />
+    <Compile Include="ViewModel\SpreadsheetSettingsViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\AddChartViewModel.cs" />
+    <Compile Include="ViewModel\ChartPropertiesViewModel.cs" />
+    <Compile Include="ViewModel\AddCurveViewModel.cs" />
+    <Compile Include="ViewModel\DatasetImportMappingViewModel.cs" />
+    <Compile Include="ViewModel\ExportDataViewModel.cs" />
+    <Compile Include="ViewModel\FormationTopExportViewModel.cs" />
+    <Compile Include="ViewModel\FormationTopImportViewModel.cs" />
+    <Compile Include="ViewModel\FullScreenSettingsViewModel.cs" />
+    <Compile Include="ViewModel\IGlobalDataModel.cs" />
+    <Compile Include="ViewModel\IMainScreenViewModel.cs" />
+    <Compile Include="ViewModel\IMaintainProjectViewModel.cs" />
+    <Compile Include="ViewModel\ImportDataViewModel.cs" />
+    <Compile Include="ViewModel\LithologyExportDataViewModel.cs" />
+    <Compile Include="ViewModel\ImportLithologyViewModel.cs" />
+    <Compile Include="ViewModel\LithologyImagesViewModel.cs" />
+    <Compile Include="ViewModel\LithologyPropertiesViewModel.cs" />
+    <Compile Include="ViewModel\MaintainSpreadsheetViewModel.cs" />
+    <Compile Include="ViewModel\GlobalDataModel.cs" />
+    <Compile Include="Helpers\FileMenuCommands.cs" />
+    <Compile Include="ViewModel\MainScreenViewModel.cs" />
+    <Compile Include="Helpers\CalculateMenuCommands.cs" />
+    <Compile Include="ViewModel\DataMenuCommands.cs" />
+    <Compile Include="Helpers\EditMenuCommands.cs" />
+    <Compile Include="Helpers\GeologyMenuCommands.cs" />
+    <Compile Include="Helpers\GraphicMenuCommands.cs" />
+    <Compile Include="Helpers\HelpMenuCommands.cs" />
+    <Compile Include="ViewModel\ViewMenuCommands.cs" />
+    <Compile Include="Helpers\WindowMenuCommand.cs" />
+    <Compile Include="ViewModel\MultipleRemoveBaseViewModel.cs" />
+    <Compile Include="ViewModel\NotesViewModel.cs" />
+    <Compile Include="ViewModel\RemoveCurveViewModel.cs" />
+    <Compile Include="ViewModel\RemoveTrackViewModel.cs" />
+    <Compile Include="ViewModel\SubDatasetViewModel.cs" />
+    <Compile Include="ViewModel\ToolbarInfo.cs" />
+    <Compile Include="ViewModel\AddTrackViewModel.cs" />
+    <Compile Include="ViewModel\TrackPropertiesViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\WellViewModel.cs" />
+    <Compile Include="ViewModel\ZoomDialogViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GAP.BL\GAP.BL.csproj">
+      <Project>{d0cf5623-362b-4190-b6fa-3fe773f8ec7f}</Project>
+      <Name>GAP.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GAP.CustomControls\GAP.CustomControls.csproj">
+      <Project>{87c8b0ee-5727-4ad0-998d-e6d4295e9cbb}</Project>
+      <Name>GAP.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\GAP.Helpers.csproj">
+      <Project>{be3595ba-f9af-4e86-8f07-4deec4982ac0}</Project>
+      <Name>GAP.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

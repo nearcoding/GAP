@@ -1,0 +1,418 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ButtonBasicStyle" TargetType="{x:Type Button}">
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Padding" Value="5,6" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}"></Setter>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockLinkButton">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Foreground" Value="#7d8ca5"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="White"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonLink" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <TextBlock Width="{TemplateBinding Width}" FontSize="{TemplateBinding FontSize}"
+                               Height="{TemplateBinding Height}"
+                               HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                               Style="{StaticResource TextBlockLinkButton}"
+                               Text="{TemplateBinding Content}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="CircleButton" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="{DynamicResource AccentColorBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="{TemplateBinding Background}"/>
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MetroCircleButtonStyle"
+           TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="{TemplateBinding Background}"
+                                 Margin="4"
+                                 StrokeThickness="0" />
+                        <Ellipse x:Name="ellipsebg"
+                                 Fill="{DynamicResource BlackBrush}"
+                                 Opacity="0"
+                                 Margin="4"
+                                 StrokeThickness="0" />
+                        <Ellipse x:Name="ellipse"
+                                 Margin="4"
+                                 Stroke="{TemplateBinding BorderBrush}"
+                                 StrokeThickness="{Binding RelativeSource={x:Static RelativeSource.TemplatedParent}, Path=BorderThickness.Left}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type Button}" x:Key="MetroButton">
+        <Setter Property="MinHeight" Value="25" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Background" Value="{DynamicResource GrayBrush10}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Padding" Value="5,6" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="BorderThickness" Value="1" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                       Storyboard.TargetName="MouseOverBorder">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                       Storyboard.TargetName="PressedBorder">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity"
+                                                                       Storyboard.TargetName="DisabledVisualElement">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                                  Value="0.7" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                       Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+                                                                  Value="0.3" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                       Storyboard.TargetName="FocusRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                       Storyboard.TargetName="FocusInnerRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="3" />
+                        <Rectangle x:Name="DisabledVisualElement"
+                                   Fill="{DynamicResource ControlsDisabledBrush}"
+                                   IsHitTestVisible="false"
+                                   Opacity="0"
+                                   RadiusY="3"
+                                   RadiusX="3" />
+                        <Border x:Name="MouseOverBorder"
+                                Background="{DynamicResource GrayBrush8}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3.5"
+                                Opacity="0" />
+                        <Border x:Name="PressedBorder"
+                                Background="{DynamicResource GrayBrush7}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3.5"
+                                Opacity="0" />
+                        <Rectangle x:Name="FocusRectangle"
+                                   Stroke="{DynamicResource ButtonMouseOverInnerBorderBrush}"
+                                   RadiusY="4"
+                                   RadiusX="4"
+                                   Margin="-1"
+                                   Opacity="0" />
+                        <Rectangle x:Name="FocusInnerRectangle"
+                                   StrokeThickness="{TemplateBinding BorderThickness}"
+                                   Stroke="{DynamicResource ButtonMouseOverBorderBrush}"
+                                   RadiusX="3"
+                                   RadiusY="3"
+                                   Opacity="0" />
+                        <ContentPresenter x:Name="contentPresenter"
+                                          RecognizesAccessKey="True"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MetroBaseWindowButtonStyle"
+           TargetType="{x:Type Button}">
+        <Setter Property="Background"
+                Value="{DynamicResource TransparentWhiteBrush}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid"
+                          Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          RecognizesAccessKey="True"
+                                          Opacity="0.75" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="contentPresenter"
+                                    Property="Opacity"
+                                    Value="1" />
+                            <Setter TargetName="grid"
+                                    Property="Background"
+                                    Value="{DynamicResource SemiTransparentWhiteBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="False">
+                            <Setter TargetName="contentPresenter"
+                                    Property="Opacity"
+                                    Value=".5" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="grid"
+                                    Property="Background"
+                                    Value="{DynamicResource HighlightBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Foreground"
+                                    Value="#ADADAD" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MetroWindowButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MetroBaseWindowButtonStyle}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Width" Value="34" />
+        <Setter Property="MaxHeight" Value="34" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style x:Key="ButtonCancel" TargetType="{x:Type Button}"  BasedOn="{StaticResource MetroButton}">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Command" Value="{Binding CancelCommand}"/>
+        <Setter Property="Content" Value="{DynamicResource CancelButton}"/>
+
+    </Style>
+
+    <Style x:Key="ButtonSave" TargetType="Button" BasedOn="{StaticResource MetroButton}">
+        <Setter Property="Command" Value="{Binding SaveCommand}"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Content" Value="{DynamicResource SaveButton}"/>
+    </Style>
+
+    <Style x:Key="ButtonSearch" TargetType="Button">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Margin" Value="0,5" />
+    </Style>
+
+    <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource TransparentWhiteBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid" Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Opacity="0.75"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value="1" />
+                            <Setter TargetName="grid" Property="Background" Value="{DynamicResource SemiTransparentWhiteBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value=".5" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="grid" Property="Background" Value="{DynamicResource HighlightBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonImage">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Rectangle Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonEditImage">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Rectangle Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/Images/Edit.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonExpandImage">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Rectangle Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="../Images/Expand.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style  x:Key="HyperLinkToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate   TargetType="ToggleButton">
+                    <TextBlock  TextDecorations="Underline">
+                <ContentPresenter TextBlock.FontFamily="Segoe UI" TextBlock.FontSize="13"/>
+                    </TextBlock>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#195AE0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter   Property="Foreground"    Value="Red" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="HyperLinkButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate   TargetType="Button">
+                    <TextBlock  TextDecorations="Underline">
+                <ContentPresenter TextBlock.FontFamily="Segoe UI" TextBlock.FontSize="13"/>
+                    </TextBlock>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#195AE0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter   Property="Foreground"    Value="Red" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="MetroCircleButtonStyle2" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="{TemplateBinding Background}" Margin="4" StrokeThickness="0" />
+                        <Ellipse x:Name="ellipsebg" Fill="{DynamicResource BlackBrush}" Opacity="0"
+                                 Margin="4"
+                                 StrokeThickness="0" />
+                        <Ellipse x:Name="ellipse" Margin="4" Stroke="{TemplateBinding BorderBrush}"
+                                 StrokeThickness="{Binding RelativeSource={x:Static RelativeSource.TemplatedParent}, Path=BorderThickness.Left}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

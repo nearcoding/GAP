@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="GAP.Custom_Controls.CustomChartLegend"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="UC1"
+             xmlns:controls= "clr-namespace:GAP.CustomControls;assembly=GAP.CustomControls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Background="White"       
+             xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <BLL:ColourToBrushConverter x:Key="ColourToBrushConverter"/>
+        <BLL:CurveToShowTitleConverter x:Key="CurveToShowTitleConverter"/>       
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3">
+            <DockPanel>
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                        <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                        <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                        <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalContentAlignment="Center" Grid.Column="1">
+                        <Label.Content>
+                            <TextBlock Foreground="{Binding DatasetObject.LineColor,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ColourToBrushConverter}}" >
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource CurveToShowTitleConverter}">
+                                        <Binding Path="DatasetObject.RefWell"/>
+                                        <Binding Path="DatasetObject.Name"/>
+                                        <Binding Path="DatasetObject.Units"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Label.Content>
+                    </Label>
+                    <CheckBox VerticalAlignment="Center" Grid.Column="3" HorizontalAlignment="Right" 
+                              IsChecked="{Binding IsSeriesVisible, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="CheckBoxVisibility"/>
+                </Grid>
+            </DockPanel>
+            <controls:ScaleControl SeriesColor="{Binding DatasetObject.LineColor, Converter={StaticResource ColourToBrushConverter}}"
+                                   MinValue="{Binding MinValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" MaxValue="{Binding MaxValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" NumberOfUnits="2"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,91 @@
+﻿<base:BaseWindow x:Class="GAP.CurvePrintingView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:base="clr-namespace:GAP.ExtendedControls"
+            xmlns:bll="clr-namespace:GAP.BL;assembly=GAP.BL"
+            xmlns:extended="http://nearcoding.com/controls"
+            Style="{StaticResource WindowDialogResize}" WindowStartupLocation="CenterScreen"
+            xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"
+            Title="{Binding Title}" Height="400" Width="600">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BLL:LithologyPrintingTextConverter x:Key="LithologyConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <TreeView BorderBrush="Black" BorderThickness="0 0 0 2" HorizontalContentAlignment="Stretch" 
+                  ItemsSource="{Binding Charts}">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type bll:Chart}" ItemsSource="{Binding Tracks}">
+                    <CheckBox IsChecked="{Binding IsEntitySelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Content="{Binding Name}" x:Name="TextBlockProject" Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
+                </HierarchicalDataTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type bll:Track}" ItemsSource="{Binding Curves}">
+                    <CheckBox IsChecked="{Binding IsEntitySelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Content="{Binding Name}" Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type bll:Curve}">
+                    <CheckBox x:Name="chkBox" IsChecked="{Binding IsEntitySelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Tag="{Binding DataContext,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}">
+                        <CheckBox.Content>
+                            <TextBlock x:Name="txt">
+                               <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource LithologyConverter}">
+                                        <Binding Path="RefWell"/>
+                                        <Binding Path="RefDataset"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                                <TextBlock.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger  Binding="{Binding ElementName=txt, Path=Text}" Value="Include Lithology">
+                                                <Setter Property="TextBlock.FontStyle" Value="Italic"/>
+                                                <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Resources>
+                            </TextBlock>
+                        </CheckBox.Content>
+                    </CheckBox>
+                </DataTemplate>
+            </TreeView.Resources>
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource MetroTreeViewItem}">
+                    <Setter Property="IsExpanded" Value="True"></Setter>
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+        <Separator Grid.Row="2"/>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox  Grid.Column="1" Content="{DynamicResource PrintFormationTop}" IsChecked="{Binding PrintFormationTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Column="3" Content="{DynamicResource PrintDataset}" IsChecked="{Binding PrintDataset, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="5" Style="{StaticResource HyperLinkButtonStyle}" Content="{DynamicResource PrinterSettings}" 
+                   HorizontalAlignment="Left" Command="{Binding PrinterSettingsCommand}"/>
+        </Grid>
+        <StackPanel  Grid.Row="6" Grid.Column="1"   Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Style="{StaticResource MetroButton}" Command="{Binding PrintCommand}" Content="{DynamicResource Print}" Margin="0 0 10 0"/>
+            <Button Style="{StaticResource MetroButton}" Command="{Binding PrintPreviewCommand}" Content="{DynamicResource PrintPreview}" Margin="0 0 10 0"/>
+            <Button Style="{StaticResource MetroButton}" Command="{Binding CancelCommand}" Content="{DynamicResource CancelButton}"/>
+        </StackPanel>
+    </Grid>
+</base:BaseWindow>

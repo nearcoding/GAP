@@ -1,0 +1,51 @@
+﻿<base:BaseWindow x:Class="GAP.ChartPropertiesView"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource ChartProperties}" Height="300" Width="300"
+        FocusManager.FocusedElement="{Binding ElementName=ListBoxItems}"
+        Style="{StaticResource WindowDialogResize}" 
+        WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{DynamicResource ChartOrder}" Grid.Row="1"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox BorderThickness="1" BorderBrush="{DynamicResource AccentColorBrush}" x:Name="ListBoxItems" DisplayMemberPath="Name" 
+                     ItemsSource="{Binding Charts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     SelectionMode="Single"  SelectedItem="{Binding SelectedChart, Mode=TwoWay}" 
+                     HorizontalAlignment="Stretch"/>
+            <StackPanel VerticalAlignment="Center" Grid.Column="2">
+                <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="35" Width="50" Margin="0 0 10 20"  ToolTip="Up" Command="{Binding UpCommand}">
+                    <Button.Content>
+                        <Image Source="../Images/UpArrow.png"/>
+                    </Button.Content>
+                </Button>
+                 <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="35" Width="50" Margin="0 0 10 0"  ToolTip="Down" Command="{Binding DownCommand}">
+                    <Button.Content>
+                        <Image Source="../Images/DownArrow.png"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <ContentControl Style="{StaticResource SaveCancelButton}" Grid.Row="5" HorizontalAlignment="Right"/>
+       
+    </Grid>
+</base:BaseWindow>

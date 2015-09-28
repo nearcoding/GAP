@@ -1,0 +1,1213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BA54EFF-82DE-425F-AF93-2B2BE93EBE94}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAP</RootNamespace>
+    <AssemblyName>GAP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>D:\Petroleros\Petroleros Resources\GAP_Executable_Local\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.html</WebPage>
+    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9DDDD8A562EFAFD7CBEC6803D8C781C73DCC7135</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GAP_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Abt.Controls.SciChart.Wpf, Version=3.32.0.6026, Culture=neutral, PublicKeyToken=b55dd9efe817e823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GAP\GAP_Clone\GAP\bin\Debug\Abt.Controls.SciChart.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net40\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net40\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=0.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MahApps.Metro-master\MahApps.Metro-master\MahApps.Metro\bin\Release\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="MixModes.Synergy.Themes">
+      <HintPath>..\..\Synergy\MixModes.Synergy.Themes\bin\Debug\MixModes.Synergy.Themes.dll</HintPath>
+    </Reference>
+    <Reference Include="MixModes.Synergy.Utilities">
+      <HintPath>..\..\Synergy\MixModes.Synergy.Utilities\bin\Debug\MixModes.Synergy.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="MixModes.Synergy.VisualFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MixModes.Synergy.VisualFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net40\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net40\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net40\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net40\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-XAML.2.2.5\lib\net40\System.Reactive.Windows.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddNewNoteView.xaml.cs">
+      <DependentUpon>AddNewNoteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddRemoveFormationTopView.xaml.cs">
+      <DependentUpon>AddRemoveFormationTopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddRemoveLithologyView.xaml.cs">
+      <DependentUpon>AddRemoveLithologyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EquationView.xaml.cs">
+      <DependentUpon>EquationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MathFilterView.xaml.cs">
+      <DependentUpon>MathFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\GridLengthValueConverter.cs" />
+    <Compile Include="Converters\LithologyImageBinding.cs" />
+    <Compile Include="Converters\TrackColorConverter.cs" />
+    <Compile Include="CurvePrintingView.xaml.cs">
+      <DependentUpon>CurvePrintingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\CustomChartLegend.xaml.cs">
+      <DependentUpon>CustomChartLegend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\TrackWindow.xaml.cs">
+      <DependentUpon>TrackWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucDatasetMathFilter.xaml.cs">
+      <DependentUpon>ucDatasetMathFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucDataset.xaml.cs">
+      <DependentUpon>ucDataset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucLineEditorView.xaml.cs">
+      <DependentUpon>ucLineEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucShalePointFilterView.xaml.cs">
+      <DependentUpon>ucShalePointFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucSolutionExplorer.xaml.cs">
+      <DependentUpon>ucSolutionExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucTabCharts.xaml.cs">
+      <DependentUpon>ucTabCharts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\ucTrackItemsControl.xaml.cs">
+      <DependentUpon>ucTrackItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeToolbarView.xaml.cs">
+      <DependentUpon>CustomizeToolbarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetImportMappingView.xaml.cs">
+      <DependentUpon>DatasetImportMappingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetPrintingView.xaml.cs">
+      <DependentUpon>DatasetPrintingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetMathFilterView.xaml.cs">
+      <DependentUpon>DatasetMathFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEquationView.xaml.cs">
+      <DependentUpon>AddEquationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedControls\BaseWindow.cs" />
+    <Compile Include="ExtendedControls\ExtendedToolbar.xaml.cs" />
+    <Compile Include="ExtendedControls\ExtendedTooltipModifierForLineAnnotation.cs" />
+    <Compile Include="ExtendedControls\SelectorExtent.cs" />
+    <Compile Include="ExtendedControls\TextBoxExtended.cs" />
+    <Compile Include="ExtendedControls\ZoomPanModifierExtension.cs" />
+    <Compile Include="FormationTopExportView.xaml.cs">
+      <DependentUpon>FormationTopExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormationTopImportView.xaml.cs">
+      <DependentUpon>FormationTopImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FullScreenSettingsView.xaml.cs">
+      <DependentUpon>FullScreenSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GoToMarkView.xaml.cs">
+      <DependentUpon>GoToMarkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\DatasetPrintingClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HelperClasses\FocusedBehavior.cs" />
+    <Compile Include="HelperClasses\GridHelper.cs" />
+    <Compile Include="HelperClasses\HelperAttachedProperties.cs" />
+    <Compile Include="HelperClasses\TextBoxBehavior.cs" />
+    <Compile Include="HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportDataView.xaml.cs">
+      <DependentUpon>ImportDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LinePropertiesView.xaml.cs">
+      <DependentUpon>LinePropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LithologyExportDataView.xaml.cs">
+      <DependentUpon>LithologyExportDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LithologyImagesDialogView.xaml.cs">
+      <DependentUpon>LithologyImagesDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportLithologyView.xaml.cs">
+      <DependentUpon>ImportLithologyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LithologyPropertiesView.xaml.cs">
+      <DependentUpon>LithologyPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.OpenScreens.xaml.cs" />
+    <Compile Include="NotesView.xaml.cs">
+      <DependentUpon>NotesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OverburdenGradientView.xaml.cs">
+      <DependentUpon>OverburdenGradientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PorePressureDrillingExponent.xaml.cs">
+      <DependentUpon>PorePressureDrillingExponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PorePressureView.xaml.cs">
+      <DependentUpon>PorePressureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveChartView.xaml.cs">
+      <DependentUpon>RemoveChartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveCurveView.xaml.cs">
+      <DependentUpon>RemoveCurveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveTrackView.xaml.cs">
+      <DependentUpon>RemoveTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPreview\CurvePrintPreview.xaml.cs">
+      <DependentUpon>CurvePrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPreview\DatasetPrintPreviewView.xaml.cs" />
+    <Compile Include="Reports\rptCurvePrinting.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCurvePrinting.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCurvePrintingWithDataset1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCurvePrintingWithDataset.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDatasetCurvePrinting1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDatasetCurvePrinting.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDatasetPrinting.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDatasetPrinting.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelectDataset.xaml.cs">
+      <DependentUpon>SelectDataset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SpreadsheetSettingsView.xaml.cs">
+      <DependentUpon>SpreadsheetSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AverageAndExactOrCloserValueView.xaml.cs">
+      <DependentUpon>AverageAndExactOrCloserValueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartPropertiesView.xaml.cs">
+      <DependentUpon>ChartPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetView.xaml.cs">
+      <DependentUpon>DatasetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddCurveView.xaml.cs">
+      <DependentUpon>AddCurveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\NumberTextBox.xaml.cs">
+      <DependentUpon>NumberTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDataView.xaml.cs">
+      <DependentUpon>ExportDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\GlobalData.cs" />
+    <Compile Include="SubDatasetView.xaml.cs">
+      <DependentUpon>SubDatasetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SurfaceTestWindow.xaml.cs">
+      <DependentUpon>SurfaceTestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WellView.xaml.cs">
+      <DependentUpon>WellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddChartView.xaml.cs">
+      <DependentUpon>AddChartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectView.xaml.cs">
+      <DependentUpon>ProjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddTrackView.xaml.cs">
+      <DependentUpon>AddTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainSpreadsheetView.xaml.cs">
+      <DependentUpon>MaintainSpreadsheetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrackPropertiesView.xaml.cs">
+      <DependentUpon>TrackPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ZoomDialogView.xaml.cs" />
+    <Page Include="AddNewNoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddRemoveFormationTopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddRemoveLithologyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MathFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CurvePrintingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\CustomChartLegend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\TrackWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\ucDatasetMathFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Custom Controls\ucDataset.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\ucLineEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Custom Controls\ucShalePointFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\ucSolutionExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\ucTabCharts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\ucTrackItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeToolbarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatasetImportMappingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatasetPrintingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatasetMathFilterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddEquationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormationTopExportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormationTopImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FullScreenSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GoToMarkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportDataView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\English.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Languages\French.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LinePropertiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LithologyExportDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LithologyImagesDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportLithologyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LithologyPropertiesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NotesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OverburdenGradientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PorePressureDrillingExponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PorePressureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemoveChartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemoveCurveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemoveTrackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPreview\CurvePrintPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportPreview\DatasetPrintPreviewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectDataset.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpreadsheetSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AverageAndExactOrCloserValueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChartPropertiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatasetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddCurveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\NumberTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExportDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.RoundButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ButtonWithNoStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubDatasetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SurfaceTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="AddChartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.Combobox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.ContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.CustomScrollbars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.DataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.GroupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.MainScreenScrollbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.MetroScrollbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.MetroScrollbars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.Scrollbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.Scrollviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\BaseResource.ScrollViewerThin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.UpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.ImportExportControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddTrackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MaintainSpreadsheetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\BaseResource.Grid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\BaseResource.LatLongControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\BaseResource.TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\BaseResource.TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\BaseResource.Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrackPropertiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZoomDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Notes.txt" />
+    <SplashScreen Include="SplashScreen1.png" />
+    <Resource Include="Images\LoginTitle.png" />
+    <Resource Include="Images\Icon.png" />
+    <Resource Include="Images\Icon1.ico" />
+    <Resource Include="Images\Earth.ico" />
+    <Resource Include="Images\Blue_Toolbar.png" />
+    <Resource Include="Images\imgNewProject.png" />
+    <Resource Include="Images\imgLoadProject.png" />
+    <Resource Include="Images\imgPrint.png" />
+    <Resource Include="Images\imgSaveProject.png" />
+    <Resource Include="Images\imgTower.png" />
+    <Resource Include="Images\imgOB.png" />
+    <Resource Include="Images\imgPP.png" />
+    <Resource Include="Images\imgLithology.png" />
+    <Resource Include="Images\imgNote.png" />
+    <Resource Include="Images\imgSpreadsheet.png" />
+    <Resource Include="Images\imgFG.png" />
+    <Resource Include="Images\imgHelp.png" />
+    <Resource Include="Images\imgRedo.png" />
+    <Resource Include="Images\imgUndo.png" />
+    <Resource Include="Images\imgZoomIn.png" />
+    <Resource Include="Images\imgZoomOut.png" />
+    <Resource Include="Images\folder2020.png" />
+    <Resource Include="Images\Dataset_Line_Style_Preview1.png" />
+    <Resource Include="Images\Dataset_Line_Style_Preview2.png" />
+    <Resource Include="Images\Dataset_Line_Style_Preview3.png" />
+    <Resource Include="Images\Dataset_Line_Style_Preview4.png" />
+    <Resource Include="Images\Dataset_Line_Style_Preview5.png" />
+    <Resource Include="Images\Dataset_Line_Grossor_Preview1.png" />
+    <Resource Include="Images\Dataset_Line_Grossor_Preview2.png" />
+    <Resource Include="Images\Dataset_Line_Grossor_Preview3.png" />
+    <Resource Include="Images\Dataset_Line_Grossor_Preview4.png" />
+    <Resource Include="Images\Dataset_Marker_Style_Preview1.png" />
+    <Resource Include="Images\Dataset_Marker_Style_Preview2.png" />
+    <Resource Include="Images\Dataset_Marker_Style_Preview3.png" />
+    <Resource Include="Images\Dataset_Marker_Style_Preview4.png" />
+    <Resource Include="Images\Dataset_Marker_Style_Preview5.png" />
+    <Resource Include="Images\Dataset_Marker_Style_Preview6.png" />
+    <Resource Include="Images\Dataset_Line_Grossor_Preview1_1.png" />
+    <Resource Include="Images\imgAutoDepth.png" />
+    <Resource Include="Images\imgCopy.png" />
+    <Resource Include="Images\imgCut.png" />
+    <Resource Include="Images\imgDecreaseDecimal.png" />
+    <Resource Include="Images\imgDelete.png" />
+    <Resource Include="Images\imgExcel.png" />
+    <Resource Include="Images\imgIncreaseDecimal.png" />
+    <Resource Include="Images\imgPaste.png" />
+    <Resource Include="Images\imgRemove.png" />
+    <Resource Include="Images\imgAdd.png" />
+    <Resource Include="Images\imgAdd_20.png" />
+    <Resource Include="Images\imgRemove_20.png" />
+    <Resource Include="Images\curvesample1.png" />
+    <Resource Include="Images\curvesample2.png" />
+    <Resource Include="Images\litsample1.png" />
+    <Resource Include="Images\asterisk.png" />
+    <Resource Include="Images\imgCheckBox.PNG" />
+    <Resource Include="Images\Expand.png" />
+    <Resource Include="Globe.ico" />
+    <Resource Include="Images\Globe.ico" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\imgCurvePrinting.png" />
+    <Resource Include="Images\imgDatasetPrinting.png" />
+    <EmbeddedResource Include="Reports\rptCurvePrinting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCurvePrinting.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCurvePrintingWithDataset.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCurvePrintingWithDataset1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDatasetCurvePrinting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDatasetCurvePrinting1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDatasetPrinting.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDatasetPrinting.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SciChartLicense.xml" />
+    <Resource Include="Resources\Save.png" />
+    <None Include="Resources\asterisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client,KB2468871">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29 and Update for .NET Framework 4 %28KB2468871%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GAP.BL\GAP.BL.csproj">
+      <Project>{d0cf5623-362b-4190-b6fa-3fe773f8ec7f}</Project>
+      <Name>GAP.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GAP.CustomControls\GAP.CustomControls.csproj">
+      <Project>{87c8b0ee-5727-4ad0-998d-e6d4295e9cbb}</Project>
+      <Name>GAP.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GAP.MainUI.ViewModels\GAP.MainUI.ViewModels.csproj">
+      <Project>{914d1c2b-cd23-4e72-93eb-586daeedec55}</Project>
+      <Name>GAP.MainUI.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\GAP.Helpers.csproj">
+      <Project>{be3595ba-f9af-4e86-8f07-4deec4982ac0}</Project>
+      <Name>GAP.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgDrawLines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\EditFreely.png" />
+    <Resource Include="Images\EditLineSegment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeleteLineSegment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddLineSegment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\redo.png" />
+    <Resource Include="Images\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddTrack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddChart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UpArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DownArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\down_black.png" />
+    <Resource Include="Images\down_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\up_black.png" />
+    <Resource Include="Images\up_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoveAllToRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoveAllToLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoveToLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MoveToRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgRedoTransparent.png" />
+    <Resource Include="Images\imgUndoTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgNotesTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgLithologyTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgCurvePrintingRound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgDatasetPrintingRound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgLinesPrinting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgSaveProjectTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgLoadProjectTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgNewProjectTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgHelpTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgTowerTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="AutoMapper.Net4.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DocumentFormat.OpenXml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeleteButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

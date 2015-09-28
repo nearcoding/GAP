@@ -1,0 +1,56 @@
+<Application x:Class="GAP.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="MainWindow.xaml" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d"
+                 xmlns:converters="clr-namespace:GAP.Converters"
+                 xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="MyImage" UriSource="Images/asterisk.png"/>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+            <Style TargetType="ScrollBar" BasedOn="{StaticResource MetroScrollBar}" />
+            <Style TargetType="ContentControl" x:Key="RectangleAsterisk">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ContentControl">
+                            <Rectangle Width="48" Height="30" Visibility="{Binding IsDirty, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="{StaticResource MyImage}">
+                                    </ImageBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Languages/English.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MixModes.Synergy.Themes;component/Themes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/ButtonWithNoStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.Window.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.Grid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.LatLongControls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.Combobox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.GroupBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.ContentControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.MetroScrollbars.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.DataGrid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.ListBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.UpDown.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.ImportExportControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.RoundButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Style/BaseResource.TabControl.xaml" />
+
+                <!--<ResourceDictionary Source="pack://application:,,,/Mahapps.Metro;component/Styles/Controls.ListBox.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

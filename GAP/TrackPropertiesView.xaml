@@ -1,0 +1,62 @@
+﻿<base:BaseWindow x:Class="GAP.TrackPropertiesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource TrackProperties}" Height="250" Width="450"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"               
+        FocusManager.FocusedElement="{Binding ElementName=ComboBoxCharts}"
+        Style="{StaticResource WindowDialogResize}" 
+        WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+    </Window.Resources>
+    <Grid Margin="10" ShowGridLines="False">
+        <Grid.RowDefinitions>            
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{DynamicResource ChartThisTrack_TitleText}"></TextBlock>
+        <ComboBox BorderBrush="{DynamicResource AccentColorBrush}" Grid.Column="2" HorizontalAlignment="Left"
+                  Width="200" ItemsSource="{Binding Charts}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedChart}"/>
+
+        <TextBlock Grid.Row="2" Text="{DynamicResource TrackOrder}" Margin="0 0 10 0" />
+        <Grid Grid.Row="2" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox BorderBrush="{DynamicResource AccentColorBrush}" BorderThickness="1" x:Name="ListBoxItems" DisplayMemberPath="Name" Grid.Column="1"  ItemsSource="{Binding Tracks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             SelectionMode="Single" SelectedItem="{Binding SelectedTrack, Mode=TwoWay}" HorizontalAlignment="Stretch"></ListBox>
+         
+            <StackPanel VerticalAlignment="Center" Grid.Column="3">
+                <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="35" Width="50" Margin="0 0 10 20"  ToolTip="Up" Command="{Binding UpCommand}">
+                    <Button.Content>
+                        <Image Source="../Images/UpArrow.png"/>
+                    </Button.Content>
+                </Button>
+                <Button Style="{StaticResource RoundButtonWithAccentBackground}" Height="35" Width="50" Margin="0 0 10 0"  ToolTip="Down" Command="{Binding DownCommand}">
+                    <Button.Content>
+                        <Image Source="../Images/DownArrow.png"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right">
+            <Button Style="{StaticResource ButtonSave}" Margin="0 0 20 0"></Button>
+            <Button Style="{StaticResource ButtonCancel}"></Button>
+        </StackPanel>
+    </Grid>
+</base:BaseWindow>

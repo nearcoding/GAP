@@ -1,0 +1,86 @@
+﻿<base:BaseWindow x:Class="GAP.AddEquationView"
+        xmlns:BLL="clr-namespace:GAP.BL;assembly=GAP.BL"            
+        x:TypeArguments="BLL:Dataset"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource WindowDialog}"
+        WindowStartupLocation="CenterScreen"
+        Title="{DynamicResource AddEquation}" Height="600" Width="380">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BLL:BooleanToVisibilityConveter x:Key="BooleanToVisbilityConverter"/>
+            <Style TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{DynamicResource Project}"/>
+        <ComboBox SelectedItem="{Binding SelectedProject}" HorizontalAlignment="Left"  Grid.Column="2" ItemsSource="{Binding Projects}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+        <TextBlock Grid.Row="2" Text="{DynamicResource Well}"/>
+        <ComboBox SelectedItem="{Binding SelectedWell}" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding Wells}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+        <TextBlock Grid.Row="4" Text="{DynamicResource Dataset}"/>
+        <ComboBox SelectedItem="{Binding SelectedDataset}" Grid.Row="4" Grid.Column="2" ItemsSource="{Binding Datasets}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+        <!--BINNING BY the posibles equations-->
+        <TextBlock Grid.Row="6" Text="{DynamicResource Equation}"/>
+        <ComboBox SelectedIndex="{Binding Equation}" Grid.Row="6" Grid.Column="2">
+            <ComboBoxItem  Content="Sum (Datasets)" />
+            <ComboBoxItem  Content="Subtraction (Datasets)" />
+            <ComboBoxItem  Content="Division (Datasets)" />
+            <ComboBoxItem  Content="Multiplication (Datasets)" />
+            <ComboBoxItem  Content="Log (base number)" />
+        </ComboBox>
+
+        <TextBlock Grid.Row="8" Text="Parameter"/>
+        <ComboBox Visibility="{Binding !ParamVisibility, Converter={StaticResource BooleanToVisbilityConverter}, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedDataset2}" Grid.Row="8" Grid.Column="2" ItemsSource="{Binding Datasets}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+        <TextBox Visibility="{Binding ParamVisibility, Converter={StaticResource BooleanToVisbilityConverter}, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Grid.Column="2" Text="{Binding EquationNumber, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="10" Text="{DynamicResource NewDataset}"/>
+        <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding CurrentObject.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="12" Text="{DynamicResource Notes}"/>
+        <TextBox Style="{StaticResource TextBoxNotes}" Grid.Row="12" Grid.Column="2" Text="{Binding CurrentObject.Notes, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+         
+        </TextBox>
+
+        <GroupBox Style="{StaticResource MetroGroupBox}"  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3" >
+            <GroupBox.Header>
+                <TextBlock Text="{DynamicResource CurveProperties}" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <StackPanel>
+                <GroupBox Style="{StaticResource LineStyleProperties}"/>
+                <GroupBox Style="{StaticResource MarkerStyleProperties}"/>
+            </StackPanel>
+        </GroupBox>
+
+        <ContentControl Style="{StaticResource SaveCancelButton}" Grid.Row="16" Grid.Column="2"/>
+    </Grid>
+</base:BaseWindow>

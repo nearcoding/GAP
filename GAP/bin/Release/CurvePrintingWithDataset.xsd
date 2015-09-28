@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DatasetPrinting" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="DatasetPrinting" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DepthCurves">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Depth" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Curve" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Project" type="xs:string" minOccurs="0" />
+              <xs:element name="Well" type="xs:string" minOccurs="0" />
+              <xs:element name="Dataset" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Dataset">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompanyName" type="xs:string" minOccurs="0" />
+              <xs:element name="DatasetName" type="xs:string" minOccurs="0" />
+              <xs:element name="WellName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProjectName" type="xs:string" minOccurs="0" />
+              <xs:element name="Family" type="xs:string" minOccurs="0" />
+              <xs:element name="Units" type="xs:string" minOccurs="0" />
+              <xs:element name="MinUnitValue" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxUnitValue" type="xs:string" minOccurs="0" />
+              <xs:element name="TVDMD" type="xs:string" minOccurs="0" />
+              <xs:element name="LineStyle" type="xs:string" minOccurs="0" />
+              <xs:element name="LineColor" type="xs:string" minOccurs="0" />
+              <xs:element name="Color" type="xs:string" minOccurs="0" />
+              <xs:element name="Grossor" type="xs:string" minOccurs="0" />
+              <xs:element name="MarkerStyle" type="xs:string" minOccurs="0" />
+              <xs:element name="MarkerColor" type="xs:string" minOccurs="0" />
+              <xs:element name="MarkerSize" type="xs:string" minOccurs="0" />
+              <xs:element name="BorderColor" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtCurvePrinting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Image" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CompanyName" type="xs:string" minOccurs="0" />
+              <xs:element name="Chart" type="xs:string" minOccurs="0" />
+              <xs:element name="Track" type="xs:string" minOccurs="0" />
+              <xs:element name="Curves" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

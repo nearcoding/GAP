@@ -1,0 +1,519 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--Menu Resources-->
+
+    <!--File Menu Resources-->
+    <system:String x:Key="FileMenu">_File</system:String>
+    <system:String x:Key="NewProject">New Project</system:String>
+    <system:String x:Key="NewWell">New Well</system:String>
+    <system:String x:Key="LoadFile">Load File</system:String>
+    <system:String x:Key="Save">Save</system:String>
+    <system:String x:Key="SaveAs">Save As</system:String>
+    <system:String x:Key="PrintPreview">Print Preview</system:String>
+    <system:String x:Key="Print">Print</system:String>
+    <system:String x:Key="ProjectProperties">Project Properties</system:String>
+    <system:String x:Key="WellProperties">Well Properties</system:String>
+    <system:String x:Key="Exit">Exit</system:String>
+    <system:String x:Key="ProjectName">Project Name</system:String>
+
+    <!--Edit Menu Resources-->
+    <system:String x:Key="EditMenu">_Edit</system:String>
+    <system:String x:Key="Undo">Undo</system:String>
+    <system:String x:Key="Redo">Redo</system:String>
+    <system:String x:Key="Cut">Cut</system:String>
+    <system:String x:Key="Copy">Copy</system:String>
+    <system:String x:Key="Paste">Paste</system:String>
+    <system:String x:Key="Delete">Delete</system:String>
+    <system:String x:Key="DeleteButton">Delete [Ctrl+D]</system:String>
+    <!--View Menu Resources-->
+    <system:String x:Key="ViewMenu">_View</system:String>
+    <system:String x:Key="Zoom">Zoom</system:String>
+    <system:String x:Key="ZoomIn">Zoom In</system:String>
+    <system:String x:Key="ZoomOut">Zoom Out</system:String>
+    <system:String x:Key="ZoomToScale">Zoom to Scale</system:String>
+    <system:String x:Key="GoToMark">Go to Mark</system:String>
+    <system:String x:Key="MakeTransparent">Make Transparent</system:String>
+    <system:String x:Key="HideToolbar">Hide Toolbar</system:String>
+    <system:String x:Key="CustomizeToolbar">Customize Toolbar</system:String>
+    <system:String x:Key="HideObjectNavigator">Hide Object Navigator</system:String>
+
+    <!--Calculate Menu Resources-->
+    <system:String x:Key="CalculateMenu">_Calculate</system:String>
+    <system:String x:Key="CalculateOverburdenGradient">Calculate Overburden Gradient</system:String>
+    <system:String x:Key="CalculatePorePressureGradient">Calculate Pore Pressure Gradient</system:String>
+    <system:String x:Key="CalculateFractureGradient">Calculate Fracture Gradient</system:String>
+    <system:String x:Key="ShalePointFilter">Shale Point Filter</system:String>
+    <system:String x:Key="MathFilter">Math Filter</system:String>
+    <system:String x:Key="AddEquation">Add Equation</system:String>
+    <system:String x:Key="AddButton">Add [Ctrl+A]</system:String>
+
+    <!--Graphics Menu Resources-->
+    <system:String x:Key="GraphicsMenu">_Graphics</system:String>
+
+    <system:String x:Key="Chart">Chart</system:String>
+    <system:String x:Key="AddChart">Add Chart</system:String>
+    <system:String x:Key="RemoveChart">Remove Chart</system:String>
+    <system:String x:Key="ChartProperties">Chart Properties</system:String>
+
+    <system:String x:Key="Tracks">Tracks</system:String>
+    <system:String x:Key="AddTrack">Add Track</system:String>
+    <system:String x:Key="RemoveTrack">Remove Track</system:String>
+    <system:String x:Key="TrackProperties">Track Properties</system:String>
+
+    <system:String x:Key="Curve">Curve</system:String>
+    <system:String x:Key="AddCurve">Add Curve</system:String>
+    <system:String x:Key="RemoveCurve">Remove Curve</system:String>
+    <system:String x:Key="CurveProperties">Curve Properties</system:String>
+
+    <system:String x:Key="NormalCompactionTrend">Normal Compaction Trend</system:String>
+    <system:String x:Key="AddRemoveNCT">Add/Remove NCT</system:String>
+    <system:String x:Key="NCTProperties">NCT Properties</system:String>
+    
+    <!--Geology Menu Resources-->
+    <system:String x:Key="Geology">Geology</system:String>
+    <system:String x:Key="Lithology">Lithology</system:String>
+    <system:String x:Key="LithologyProperties">Lithology Properties</system:String>
+    <system:String x:Key="Add/RemoveLithology">Add/Remove Lithology</system:String>
+    <system:String x:Key="ShowHideLithology">Show/Hide Lithology</system:String>
+    <system:String x:Key="ShowHideLithologyToolbar">Lithology</system:String>
+    <system:String x:Key="ImportLithology">Import Lithology</system:String>
+    <system:String x:Key="ExportLithology">Export Lithology</system:String>
+    
+    <system:String x:Key="FormationTop">Formation Top</system:String>
+    <system:String x:Key="NewFormationTop">New Formation Top</system:String>
+    <system:String x:Key="ShowHideFormationTop">Show/Hide Formation Top</system:String>
+    <system:String x:Key="ShowHideFormationToolbar">Formation Top</system:String>
+    <system:String x:Key="FormationTooltip">Depth: {0}\nFormation Top: {1}</system:String>
+
+    <system:String x:Key="RotaryTableElevation">Rotary Table Elevation (RTE)</system:String>
+    <system:String x:Key="GroundLevelElevation">Ground Level Elevation (GLE)</system:String>
+
+    <!--Data Menu Resources-->
+    <system:String x:Key="DataMenu">_Data</system:String>
+    <system:String x:Key="ImportData">Import Data</system:String>
+    <system:String x:Key="ExportData">Export Data</system:String>
+    <system:String x:Key="CreateDataset">Create Dataset</system:String>
+    <system:String x:Key="EditDataset">Edit Dataset</system:String>
+    <system:String x:Key="ImportButton">Import [Ctrl+I]</system:String>
+    <!--Window Menu Resources-->
+    <system:String x:Key="WindowsMenu">_Windows</system:String>
+    <system:String x:Key="CloseAllProjects">Close A_ll Projects</system:String>
+    <system:String x:Key="CloseAllWindows">Close All Windows</system:String>
+
+    <!--Help Menu Resources-->
+    <system:String x:Key="HelpMenu">_Help</system:String>
+    <system:String x:Key="Contents">Contents</system:String>
+    <system:String x:Key="Index">Index</system:String>
+    <system:String x:Key="About">About</system:String>
+
+
+    <!--Menu Resources End-->
+
+    <!--Common Resources-->
+    <!--todo need to implement this-->
+    <system:String x:Key="ObjectNavigator">Object Navigator</system:String>
+
+    <system:String x:Key="SaveButton">Save [Ctrl+S]</system:String>
+    <system:String x:Key="CancelButton">Cancel [Esc]</system:String>
+    <system:String x:Key="RemoveCharts">Remove Charts</system:String>
+    <system:String x:Key="RemoveNoOfCharts">Remove {0} Charts [Ctrl+S]</system:String>
+    <system:String x:Key="RemoveNoOfTracks">Remove {0} Tracks [Ctrl+S]</system:String>
+    <system:String x:Key="RemoveNoOfCurves">Remove {0} Curves [Ctrl+S]</system:String>
+
+    <!--Message boxes text-->
+    <system:String x:Key="Msg_ProjectSave1">Some changes are made in this project file.</system:String>
+    <system:String x:Key="Msg_ProjectSave2">Do you want to save the current project before opening other?</system:String>
+    <system:String x:Key="Msg_SaveBeforeClosing">Save changes before closing?</system:String>
+    <system:String x:Key="Msg_MultipleProjectWithSameName">Multiple projects with same name found in the system</system:String>
+    <system:String x:Key="Msg_ProjectNotFound">Project {0} not found in system</system:String>
+    <system:String x:Key="Msg_ProjectNameAlreadyInUse">This Project Name is already in use</system:String>
+    <system:String x:Key="Msg_OrginalProjectNameNotFound">Original Project name not found</system:String>
+    <system:String x:Key="Msg_ProjectNameMustNotBeEmpty">Project Name must not be empty</system:String>
+
+    <system:String x:Key="Msg_MultipleWellsWithSameName">Multiple wells with same name found in the system</system:String>
+    <system:String x:Key="Msg_WellNotFoundUnderProject">Well {0} not found under Project {1}</system:String>
+    <system:String x:Key="Msg_WellNameIsAlreadyUsed">This well name is already in use in the selected project</system:String>
+    <system:String x:Key="Msg_WellNameMustNotBeEmpty">Well name must not be empty</system:String>
+
+    <system:String x:Key="Msg_MultipleDatasetsWithSameName">Multiple datasets with same name found in the system</system:String>
+    <system:String x:Key="Msg_DatasetNotFound">Dataset {0} not found under Project {1} and Well {2}</system:String>
+
+    <system:String x:Key="Msg_ChartNameAlreadyInUse">This chart name is already in use</system:String>
+    <system:String x:Key="Msg_ChartRemovalConfirmation">Are you sure you want to remove the selected chart(s)</system:String>
+    <system:String x:Key="Msg_TrackRemovalConfirmation">Are you sure you want to remove the selected track(s)</system:String>
+    <system:String x:Key="Msg_CurveRemovalConfirmation">Are you sure you want to remove the selected curve(s)</system:String>
+    <!--Charts and Tracks-->
+
+    <!--Default Charts-->
+    <system:String x:Key="Logs">Logs</system:String>
+    <!--Log Charts and Tracks-->
+    <system:String x:Key="GammaRay">Gamma Ray</system:String>
+    <system:String x:Key="Sonic-DT">Sonic-DT</system:String>
+    <system:String x:Key="RHOB">RHOB</system:String>
+    <system:String x:Key="Events">Events</system:String>
+    <system:String x:Key="OtherLogs">Other Logs</system:String>
+
+    <!--Overburden Charts and Tracks-->
+    <system:String x:Key="Overburden">Overburden</system:String>
+
+    <system:String x:Key="PorePressure">Pore Pressure</system:String>
+    <!--Pore Pressure Charts and Tracks-->
+
+    <system:String x:Key="RHOB-GammaRay">RHOB-Gamma Ray</system:String>
+    <system:String x:Key="Lithology-Events">Lithology-Events</system:String>
+
+    <!--Frac Gradient Charts and Tracks-->
+
+    <system:String x:Key="Frac.Gradient">Frac. Gradient</system:String>
+    <system:String x:Key="Sonic-GammaRay-RHOB">Sonic-Gamma Ray-RHOB</system:String>
+
+    <!--Maintain Project Screen Resources-->
+    <system:String x:Key="Project">Project</system:String>
+    <system:String x:Key="Country">Country</system:String>
+    <system:String x:Key="StateProvince">State/Province</system:String>
+    <system:String x:Key="GeologicalBasin">Geological Basin</system:String>
+    <system:String x:Key="Units">Units</system:String>
+    <system:String x:Key="DeleteProject">Delete Project</system:String>
+    <!--Maintain Well Screen Resources-->
+    <system:String x:Key="Well">Well</system:String>
+    <system:String x:Key="WellInformation">Well Information</system:String>
+    <system:String x:Key="WellName">Well Name</system:String>
+    <system:String x:Key="Location">Location</system:String>
+    <system:String x:Key="Operator">Operator</system:String>
+    <system:String x:Key="Onshore">Onshore</system:String>
+    <system:String x:Key="Offshore">Offshore</system:String>
+
+    <system:String x:Key="Longitude">Longitude</system:String>
+    <system:String x:Key="Latitude">Latitude</system:String>
+    <system:String x:Key="GeographicCooridnates">Geographics Coordinates</system:String>
+    <system:String x:Key="Geographic">Geographic</system:String>
+    <system:String x:Key="Coordinates">Coordinates</system:String>
+    <system:String x:Key="Degrees">Degrees</system:String>
+    <system:String x:Key="Minutes">Minutes</system:String>
+    <system:String x:Key="Seconds">Seconds</system:String>
+    <system:String x:Key="Gauss">Gauss</system:String>
+    <system:String x:Key="Datum">Datum</system:String>
+
+    <system:String x:Key="OffshoreData">Offshore Data</system:String>
+    <system:String x:Key="AirGap">Air Gap</system:String>
+    <system:String x:Key="WaterDepth">Water Depth</system:String>
+    <system:String x:Key="WaterDensity">Water Density</system:String>
+
+    <system:String x:Key="PressureEngineerNames">Pressure Engineer Names</system:String>
+    <system:String x:Key="PressureConstants">Pressure Constants</system:String>
+    <system:String x:Key="NormalPorePressureGradient">Normal Pore Pressure Gradient</system:String>
+    <system:String x:Key="RegionalFracturePressureGradient">Regional Fracture Pressure Gradient</system:String>
+    <system:String x:Key="RegionalOverburdenGradient">Regional Overburden Gradient</system:String>
+
+    <system:String x:Key="DeleteWell">Delete Well</system:String>
+
+    <!--Customize toolbar screen-->
+    <system:String x:Key="ItemsAvailable">Items Available</system:String>
+    <system:String x:Key="ItemsInTheToolbox">Items in the Toolbox</system:String>
+    <system:String x:Key="InsertSeparatorButton">Insert Separator [Ctrl+I]</system:String>
+    <system:String x:Key="RemoveSeparatorButton">Remove Separator [Ctrl+R]</system:String>
+
+    <system:String x:Key="LoadProject">Load Project [Ctrl+O]</system:String>
+    <system:String x:Key="SaveProject">Save Project [Ctrl+S]</system:String>
+
+    <system:String x:Key="CalculateFracture">Calculate Fracture</system:String>
+    <system:String x:Key="CalculateOverburden">Calculate Overburden</system:String>
+    <system:String x:Key="GeologyLithology">Geology Lithology</system:String>
+    <!--<system:String x:Key="Spreadsheet">Spreadsheet</system:String>-->
+    <system:String x:Key="Notes">Notes</system:String>
+
+    <system:String x:Key="Help">Help</system:String>
+    <system:String x:Key="SyncDepth">Sync Depth</system:String>
+    <system:String x:Key="DrawLine">Draw Line</system:String>
+    <system:String x:Key="EnableScreenshotWithControls">Enable Screenshot with Controls</system:String>
+    <system:String x:Key="Tooltip">Tooltip</system:String>
+    <system:String x:Key="ShowHideFormation">Show/Hide Formation</system:String>
+    <system:String x:Key="ShowFullLithology">Full Lithology</system:String>
+
+    <!--Chart Screens-->
+    <system:String x:Key="ChartName">Chart Name</system:String>
+    <system:String x:Key="ChartOrder">Chart Order</system:String>
+    <system:String x:Key="ChartRemove_TitleText">Select the Charts you want to remove</system:String>
+    <system:String x:Key="No.OfTracks">No. Of Tracks</system:String>
+    <system:String x:Key="No.OfCurves">No. Of Curves</system:String>
+    <system:String x:Key="NoOfTracksInThisChart">{0} tracks in this chart</system:String>
+    <system:String x:Key="NoOfCurvesInThisChart">{0} curves in this chart</system:String>
+
+
+    <!--Track Screens-->
+    <system:String x:Key="Track">Track</system:String>
+    <system:String x:Key="ChartThisTrack_TitleText">Chart this Track belongs to</system:String>
+    <system:String x:Key="TrackName">Track Name</system:String>
+    <system:String x:Key="TrackOrder">Track Order</system:String>
+    <system:String x:Key="TrackRemove_TitleText">Select the Track you want to remove</system:String>
+    <system:String x:Key="NoOfCurvesInThisTrack">{0} curves in this track</system:String>
+
+    <!--Curve Screens-->
+    <system:String x:Key="ChartThisCurve_TitleText">Chart this curve belongs to</system:String>
+    <system:String x:Key="TrackThisCurve_TitleText">Track this curve belongs to</system:String>
+    <system:String x:Key="RelatedProject">Related Project</system:String>
+    <system:String x:Key="RelatedWell">Related Well</system:String>
+    <system:String x:Key="RelatedDataset">Related Dataset</system:String>
+    <system:String x:Key="CurveRemove_TitleText">Select the Curve you want to remove</system:String>
+    <system:String x:Key="Curve/DatasetName">Curve/Dataset Name</system:String>
+    <system:String x:Key="RefTrack">Ref Track</system:String>
+    <system:String x:Key="RefChart">Ref Chart</system:String>
+    <system:String x:Key="RefWell">Ref Well</system:String>
+    <system:String x:Key="RefProject">Ref Project</system:String>
+
+    <!--Lithology screens-->
+    <system:String x:Key="ExistingLithologies">Existing Lithologies</system:String>
+    <system:String x:Key="InitialDepth">Initial Depth</system:String>
+    <system:String x:Key="FinalDepth">Final Depth</system:String>
+    <system:String x:Key="SelectImage">Select Image</system:String>
+    <system:String x:Key="Name">Name</system:String>
+    <system:String x:Key="LithologyName">LithologyName</system:String>
+    <system:String x:Key="LithologyImage">Lithology Image</system:String>
+    <system:String x:Key="Depth">Depth</system:String>
+
+    <system:String x:Key="DataFormat">Data Format</system:String>
+    <system:String x:Key="LithologyImportData_Title">Select the Chart and Track that will be used to get the lithology data</system:String>
+    <system:String x:Key="LithologyImportData_SkipInvalidRecords">Skip invalid records(records with non numeric values)</system:String>
+
+    <!--Formation Top Screens-->
+    <system:String x:Key="FormationTopName">Formation Top Name</system:String>
+
+    <!--Import Data Screen-->
+    <system:String x:Key="ImportData_Alert">Alert! The first column will be taken as the default depth(either TVD or MD).</system:String>
+    <system:String x:Key="ImportData_ExactData">Import exact data to the file</system:String>
+    <system:String x:Key="ImportData_AverageData">Import average data into GAP</system:String>
+    <system:String x:Key="DataSource">Data Source</system:String>
+    <system:String x:Key="File">File</system:String>
+    <system:String x:Key="Browse">Browse</system:String>
+    <system:String x:Key="ImportAverageData">Import Average Data</system:String>
+
+    <!--Export Data screen-->
+    <system:String x:Key="ExportData_TitleText">Select the Project and the Well that will be use to Export the data</system:String>
+
+    <!--Maintain Dataset screen-->
+    <system:String x:Key="DatasetProperties">Dataset Properties</system:String>
+    <system:String x:Key="DatasetName">Dataset Name</system:String>
+    <system:String x:Key="Family">Family</system:String>
+
+    <system:String x:Key="MinUnitValue">Min Unit Value</system:String>
+    <system:String x:Key="MaxUnitValue">Max Unit Value</system:String>
+    <system:String x:Key="TVD">TVD</system:String>
+    <system:String x:Key="MD">MD</system:String>
+
+    <system:String x:Key="Style">Style</system:String>
+    <system:String x:Key="Color">Color</system:String>
+    <system:String x:Key="Grossor">Thickness</system:String>
+    <system:String x:Key="Size">Size</system:String>
+    <system:String x:Key="BorderColor">Border Color</system:String>
+    <system:String x:Key="DeleteDataset">Delete Dataset</system:String>
+
+    <!--Spreadsheet Resources-->
+    <system:String x:Key="EditSpreadsheet">Edit Spreadsheet</system:String>
+
+    <!--Screen Titles-->
+    <system:String x:Key="GAP">GAP</system:String>
+    <system:String x:Key="EditProject">Edit Project</system:String>
+    <system:String x:Key="EditWell">Edit Well</system:String>
+    <system:String x:Key="CreateChart">Create Chart</system:String>
+
+    <system:String x:Key="RemoveTracks">Remove Tracks</system:String>
+    <system:String x:Key="RemoveCurves">Remove Curves</system:String>
+    <system:String x:Key="LithologyImportData">Lithology Import Data</system:String>
+    <system:String x:Key="LithologyExportData">Lithology Export Data</system:String>
+    <system:String x:Key="AddRemoveFormationTop">Add/Remove Formation Top</system:String>
+    <system:String x:Key="NewDataset">New Dataset</system:String>
+
+
+    <!--Main Screen Resources-->
+    <system:String x:Key="SetApplicationTheme">Set Application Theme</system:String>
+    <system:String x:Key="SetTrackTheme">Set Track Theme</system:String>
+    <system:String x:Key="ApplicationVersion">Application Version</system:String>
+
+    <system:String x:Key="ToggleAuto-Rows">Toggle Auto-Rows</system:String>
+    <system:String x:Key="On">On</system:String>
+    <system:String x:Key="Off">Off</system:String>
+    <system:String x:Key="DatasetInformation">Dataset Information:</system:String>
+  
+    <system:String x:Key="DeleteRecords">Delete Records [Ctrl+D]</system:String>
+    <system:String x:Key="AddToList">Add To List [Ctrl+A]</system:String>
+    <system:String x:Key="AddNew">Add New [Ctrl+A]</system:String>
+    <system:String x:Key="AddNewNote">Add New Note</system:String>
+    <system:String x:Key="UnableToDetermineFirstSheetInTheFile">Unable to determine the first sheet in file</system:String>
+    <system:String x:Key="InvalidColumnsFoundInExcelSheet">Invalid columns found in excel sheet</system:String>
+    <system:String x:Key="InvalidValueFoundInDepthColumn">Invalid value found in depth column</system:String>
+    <system:String x:Key="NoValidRecordFoundToProcess">No valid record found to process</system:String>
+    <system:String x:Key="LithologiesSavedSuccessfully">Lithologies saved successfully</system:String>
+    <system:String x:Key="DoYouWantToDeleteTheSelectedLithologies">Do you want to delete the selected lithologies?</system:String>
+    <system:String x:Key="DoYouWantToDeleteTheSelectedFormations">Do you want to delete the selected formations?</system:String>
+    <system:String x:Key="FormationsSavedSuccessfully">Formations saved successfully</system:String>
+    <system:String x:Key="InitialAndFinalDepthAreOverlappingLithology">Initial depth and Final depth are overlapping Lithology {0}</system:String>
+    <system:String x:Key="PleaseInputValidLithologyName">Please input valid Lithology name</system:String>
+    <system:String x:Key="PleaseSelectAppropriateImage">Please select appropriate image</system:String>
+    <system:String x:Key="InitialDepthShouldbeSmallerThanFinalDepth">Initial depth should be smaller than final depth</system:String>
+    <system:String x:Key="WrongFileExtension">Wrong File Extension, it must be .BMP only</system:String>
+    <system:String x:Key="FileAlreadyExists">A file with this name already exists</system:String>
+    <system:String x:Key="DoYouWantToDeleteTheSelectedLithologyImage">Do you want to delete the selected lithology image?</system:String>
+    <system:String x:Key="NoDatasetFoundToImport">No dataset found to import</system:String>
+    <system:String x:Key="SaveChangesBeforeClosingTheScreen">Some changes has been made to this record. Do you want to save the changes before closing the screen?</system:String>
+    <system:String x:Key="MinMaxValidation">There is some data in spreadsheet which violates Min Unit Values and Max Unit Values. Do you want to proceed with update?</system:String>
+    <system:String x:Key="DoYouWantToRemoveTheSelectedNotes">Do you want to remove the selected notes?</system:String>
+    <system:String x:Key="NoValidAttributeFoundInLasFile">No valid attribute found in LAS file</system:String>
+    <system:String x:Key="InvalidValuesAgainstDepths">These depths has invalid data {0}. These values has invalid data against these depths {1}</system:String>
+    <system:String x:Key="LithologyDirectoryNotFound">Lithology directory not found</system:String>
+    <system:String x:Key="OverlappingLithologiesFoundIntheSystem">Overlapping lithologies found in the system</system:String>
+    <system:String x:Key="ChartListIsNull">Chart List is null</system:String>
+    <system:String x:Key="TrackListIsNull">Track List is null</system:String>
+    <system:String x:Key="NoRowHaveBeenSelected">No row have been selected</system:String>
+    <system:String x:Key="SpreadsheetForDataset">Spreadsheet for Dataset: {0}</system:String>
+    <system:String x:Key="RowMustBeSelectedBeforePasting">A row must be selected in order to paste it to the next row</system:String>
+    <system:String x:Key="DuplicateDepthWhilePasting">{0} depths will be repeated while pasting. Aborting task</system:String>
+    <system:String x:Key="EachRowDecimalPasting">Invalid value: {0}. Aborting task</system:String>
+    <system:String x:Key="DuplicateRowsFoundInExcelSheet">Duplicate rows found in excel sheet</system:String>
+    <system:String x:Key="InconsistentDepthsFoundInTheDataSource">Inconsistent depths found in the data source</system:String>
+    <system:String x:Key="MakeOpaque">Make Opaque</system:String>
+    <system:String x:Key="ShowToolbar">Show Toolbar</system:String>
+    <system:String x:Key="ShowObjectNavigator">Show Object Navigator</system:String>
+    <system:String x:Key="RemoveDatasetConfirmation">Are you sure you want to remove the dataset {0}</system:String>
+    <system:String x:Key="RemoveWellConfirmation">Are you sure you want to remove the well {0}</system:String>
+    <system:String x:Key="RemoveProjectConfirmation">Are you sure you want to remove the project {0}</system:String>
+    <system:String x:Key="NoDatasetFoundAgainstThisProjectAndWell">No dataset found against the selected project and well</system:String>
+    <system:String x:Key="TextFileSuccessfullyExported">Text File successfully exported</system:String>
+    <system:String x:Key="OneDatasetHasDifferentDepthThanAnother">The dataset {0} has different depth indexes than the dataset {1}</system:String>
+    <system:String x:Key="DepthAlreadyAssociatedWithFormation">This depth already associated with a formation, Please choose another depth</system:String>
+    <system:String x:Key="NoDatasetHasBeenSelected">No dataset has been selected</system:String>
+    
+    <system:String x:Key="UpdatedOn">Updated On</system:String>
+    <system:String x:Key="ExportToExcel">Export To Excel</system:String>
+    <system:String x:Key="IncreaseDecimal">Increase Decimal</system:String>
+    <system:String x:Key="DecreaseDecimal">Decrease Decimal</system:String>
+    <system:String x:Key="AutomaticDepth">Automatic Depth</system:String>
+    <system:String x:Key="CopyToCSV">Copy (To CSV)</system:String>
+    <system:String x:Key="ImageSavedSuccessfully">Image saved successfully</system:String>
+    <system:String x:Key="ExportLithologyData_TitleText">Select the Chart and the Track that will be use to Export the data</system:String>
+    <system:String x:Key="ImportLithologyData_TitleText">Select the Chart and the Track that will be use to Import the data</system:String>
+    <system:String x:Key="ImportFormation">Import Formation</system:String>
+    <system:String x:Key="ExportFormation">Export Formation</system:String>
+    <system:String x:Key="ShowHideFTToolTip">Form Name Tooltip</system:String>
+    <system:String x:Key="OverlappingFormationsFoundIntheSystem">Overlapping formations found in the system</system:String>
+    <system:String x:Key="InvalidDataFoundInTheSystem">Invalid data found in the system</system:String>
+    <system:String x:Key="LithologiesExportedFromSystem">{0} lithologies successfully exported from system</system:String>
+    <system:String x:Key="LithologiesImportedInSystem">{0} lithologies successfully imported in system</system:String>
+    <system:String x:Key="FormationsImportedInSystem">{0} formations imported successfully in system</system:String>
+    <system:String x:Key="FormationsExportedFromSystem">{0} formations successfully exported from system</system:String>
+    <system:String x:Key="ShowHideFTName">Form Name</system:String>
+    <system:String x:Key="StepIsTooHigh">The step is too high</system:String>
+    <system:String x:Key="InitialDepthCannotBeZeroOrNegative">The initial depth can not be zero or negative</system:String>
+    <system:String x:Key="ResetToolbar">Reset Toolbar</system:String>
+    <system:String x:Key="ToolbarSavedSuccessfully">Toolbar saved successfully</system:String>
+    <system:String x:Key="Image">Image</system:String>
+    <system:String x:Key="FullScreenSettings">Full Screen Settings</system:String>
+    <system:String x:Key="FullScreen">Full Screen</system:String>
+    <system:String x:Key="Step">Step</system:String>
+    <system:String x:Key="AritmeticalAverage">Aritmetical Average</system:String>
+    <system:String x:Key="ExactOrCloserValue">Exact or closer value</system:String>
+    <system:String x:Key="TrackAnalysisTitle">Track Analysis for Chart ({0}) and Track ({1})</system:String>
+    <system:String x:Key="FullSnapshot">Full Snapshot</system:String>
+    <system:String x:Key="OverlappingCurves">This dataset has already been added to this track \nAdding same dataset to same track results in overlapping curves.</system:String>
+    <system:String x:Key="NoValidDepthAndCurveFoundInSystem">No valid depth and curve found in system</system:String>
+    <system:String x:Key="DatasetNotFoundInImportedList">Dataset {0} not found in the imported list</system:String>
+    <system:String x:Key="ListOfDuplicateDepths">These duplicate depths are found in the input file {0}</system:String>
+    <system:String x:Key="InvalidRecordFoundInTheDataSource">Invalid record found in the data source</system:String>
+    <system:String x:Key="NoValidDatasetFoundToImport">No valid dataset found to import</system:String>
+    <system:String x:Key="DuplicateDatasetFoundInDataSource">Duplicate datasets {0} found in data source</system:String>
+    <system:String x:Key="DepthColumnNotFoundInDataSource">Depth column not found in data source</system:String>
+    <system:String x:Key="ValueOfStepMustBeGreaterThanOne">Value of step must be greater than or equal to 1</system:String>
+
+    <!--Dynamic Resources added in the second phase of languages-->
+    <system:String x:Key="RequiredColumnsNotFoundInExcelSheet">Required Columns not found in excel sheet</system:String>
+    <system:String x:Key="DepthOrLithologyColumnIsMissingInTheExcelSheet">Depth or Lithology Column is missing in the excel sheet</system:String>
+    <system:String x:Key="NoImageDirectoryFound">No Image directory found</system:String>
+    <system:String x:Key="NoDataReadFromExcelSheet">No data read from excel sheet</system:String>
+    <system:String x:Key="ExcelSheetSeemsToBeCorrupt">Excel sheet seems to be corrupt, please pass the valid excel sheet to proceed</system:String>
+    <system:String x:Key="InvalidImageValueFoundInLithologyColumn">Invalid image value found in lithology column</system:String>
+    <system:String x:Key="NotAValidValueForLithologyImage">{0} is not a valid value for lithology image</system:String>
+    <system:String x:Key="NotAValidValueForLithologyDepth">{0} is not a valid value for lithology depth</system:String>
+    <system:String x:Key="NoValidRecord">No valid record found in data source</system:String>
+    <system:String x:Key="ImageNotFound">Image not found</system:String>
+    <system:String x:Key="SelectExcelFileToCopyData">Please select the excel file where we should copy depth and curve data</system:String>
+    <system:String x:Key="DataExportedToExcelSuccessfully">Data exported to excel sheet successfully</system:String>
+
+    <system:String x:Key="SelectProject">Select Project</system:String>
+    <system:String x:Key="SelectWell">Select Well</system:String>
+    <system:String x:Key="SelectChart">Select Chart</system:String>
+    <system:String x:Key="SelectDataset">Select Dataset</system:String>
+    <system:String x:Key="SelectTrack">Select Track</system:String>
+    <system:String x:Key="SelectCurve">Select Curve</system:String>
+    <system:String x:Key="ImagePrinting">Image Printing</system:String>
+    <system:String x:Key="PDFPrinting">PDF Printing</system:String>
+    <system:String x:Key="PrintCurve">Print Curve</system:String>
+    <system:String x:Key="ShowHideTrackControls">Track Controls</system:String>
+    <system:String x:Key="IncludeSpreadsheetData">Include Spreadsheet Data</system:String>
+    <system:String x:Key="PrintDataset">Print Dataset</system:String>
+    <system:String x:Key="ZoomTracks">Zoom Tracks</system:String>
+    
+    <system:String x:Key="PrintFormationTop">Print Formation Top</system:String>
+    <system:String x:Key="PrintLithology">Print Lithology</system:String>
+    <system:String x:Key="DatasetImportMappingView">Dataset Import Mapping View</system:String>
+    <system:String x:Key="SaveAllWithDefaultProperties">Save All With Default Properties</system:String>
+    <system:String x:Key="HideStatusBar">Hide Status Bar</system:String>
+    <system:String x:Key="LineProperties">Line Properties</system:String>
+    <system:String x:Key="SelectedProject">Selected Project</system:String>
+    <system:String x:Key="SelectedWell">Selected Well</system:String>
+    <system:String x:Key="SelectedDataset">Selected Dataset</system:String>
+    <system:String x:Key="SubDatasetName">SubDataset Name</system:String>
+    <system:String x:Key="NormalCompactionTrendNCT">Normal Compaction Trend(NCT)</system:String>
+    <system:String x:Key="ShalePointFilterSHPT">Shale Point Filter(SHPT)</system:String>
+    <system:String x:Key="Properties">Properties</system:String>
+    <system:String x:Key="SubDatasetView">SubDataset View</system:String>
+    <system:String x:Key="AnotherCurveAlreadyExists">Another curve with this name already exists under this Chart and Track</system:String>
+    <system:String x:Key="MinUnitValueMustBeSmaller">Min Unit value must be smaller than Max Unit value</system:String>
+    <system:String x:Key="MarkerAndLineStyleShouldNotBeSame">Both Line Style and Marker Style cannot be N/A</system:String>
+    <system:String x:Key="DatasetNameAlreadyInUse">This Dataset Name is already in use in the selected Project and Well</system:String>
+    <system:String x:Key="FileTypeMustBeXLSX">File must be of type xlsx. Please change the file</system:String>
+    <system:String x:Key="FileNotFoundInSystem">File not found in system</system:String>
+    <system:String x:Key="ParallelLineInSystem">A parallel line detected on the chart, Please remove it to proceed</system:String>
+    <system:String x:Key="OverlappedLine">Line {0} overlaps line {1}</system:String>
+    <system:String x:Key="GappedLine">There is a gap between line {0} and line {1}</system:String>
+    <system:String x:Key="SubDatasetWithTheseDetailsAlreadyExists">Subdataset with these details already exists</system:String>
+    <system:String x:Key="StepCanNotBeEmpty">Step can not be empty</system:String>
+    <system:String x:Key="InitialDepthCannotBeHigherThanFinalDepth">The Initial Depth cannot be higher than the Final Depth</system:String>
+    <system:String x:Key="InitialDepthCannotBeNegative">Initial depth cannot be negative</system:String>
+    <system:String x:Key="TrackNameIsInUse">This Track name is already in use in this Chart</system:String>
+    <system:String x:Key="InvalidSlope">Invalid slope. Do you want to fix the slope or revert the changes.</system:String>
+    <system:String x:Key="FixSlope">Click Yes to fix the slope</system:String>
+    <system:String x:Key="RevertChanges">Click No to revert the changes</system:String>
+    <system:String x:Key="NoSubDatasetHasBeenSelected">No Subdataset has been selected</system:String>
+    <system:String x:Key="ShouldCancel">Are you sure you want to cancel</system:String>
+    <system:String x:Key="ShouldDeleteLine">Are you sure you want to delete this line</system:String>
+    <system:String x:Key="ShouldDeleteSubDataset">Are you sure you want to remove the selected sub dataset</system:String>
+    <system:String x:Key="CurveInformation">Curve Information</system:String>
+    <system:String x:Key="FixIt">Fix It</system:String>
+    <system:String x:Key="ApplyChanges">Apply Changes</system:String>
+    <system:String x:Key="CancelChanges">Cancel Changes</system:String>
+    <system:String x:Key="EditLineFreely">Edit Line Freely</system:String>
+    <system:String x:Key="DeleteLineSegmentText">Delete a segment of the drawn line when it is On, after clicking on the target line</system:String>
+    <system:String x:Key="EditLineSegmentText">Edit Line without changing slope</system:String>
+    <system:String x:Key="AddLineSegmentText">Add Line Segment</system:String>
+    <system:String x:Key="Line">Line</system:String>
+    <system:String x:Key="Marker">Marker</system:String>
+
+    <system:String x:Key="PrinterSettings">Printer Settings</system:String>
+    <system:String x:Key="SetLanguage">Set Language</system:String>
+
+    <system:String x:Key="SHPTFromLine">SHPT From a Line</system:String>
+    <system:String x:Key="SHPTFromVShaleDataset">SHPT From a VShale Dataset</system:String>
+    <system:String x:Key="SourceDataset">Source Dataset</system:String>
+    <system:String x:Key="SHPTFamily">SHPT Family</system:String>
+    <system:String x:Key="SHPTLine">SHPT Line</system:String>
+    <system:String x:Key="GreaterThan">Greater or Equal Than</system:String>
+    <system:String x:Key="LessThan">Less or Equal Than</system:String>
+
+    <system:String x:Key="Dataset">Dataset</system:String>
+    <system:String x:Key="Filter">Filter</system:String>
+    <system:String x:Key="Equation">Equation</system:String>
+
+    <system:String x:Key="SystemNotes">System Notes</system:String>
+    <system:String x:Key="UserNotes">User Notes</system:String>
+</ResourceDictionary>

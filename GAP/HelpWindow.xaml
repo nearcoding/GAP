@@ -1,0 +1,36 @@
+﻿<base:BaseWindow x:Class="GAP.HelpWindow"
+        xmlns:base="clr-namespace:GAP.ExtendedControls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="HelpWindowView"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Style="{StaticResource WindowDialogResize}" WindowStartupLocation="CenterScreen"
+        Title="Help Window" Height="600" Width="800">
+ 
+    <DockPanel LastChildFill="True">
+        <xctk:WatermarkTextBox VerticalContentAlignment="Center" Height="30" Watermark="Enter your search terms here" DockPanel.Dock="Top"
+                               Text="{Binding SearchableText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="2"/>
+        <ListBox 
+                Width="{Binding ElementName=HelpWindowView, Path=ActualWidth,UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     ItemsSource="{Binding ListOfItems}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding OpenScreenCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel   Width="{Binding ElementName=HelpWindowView, Path=ActualWidth,UpdateSourceTrigger=PropertyChanged}">
+                        <TextBlock TextWrapping="Wrap" Text="{Binding ScreenName}" FontWeight="Bold"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding BasicInfo}"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
+                        <Separator/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--</ScrollViewer>-->
+    </DockPanel>
+</base:BaseWindow>

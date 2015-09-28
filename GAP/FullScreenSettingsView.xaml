@@ -1,0 +1,31 @@
+﻿<base:BaseWindow x:Class="GAP.FullScreenSettingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"             
+          xmlns:base="clr-namespace:GAP.ExtendedControls" 
+       Title="{DynamicResource FullScreenSettings}" Height="130" Width="500"  Style="{StaticResource WindowDialog}" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <controls:ToggleSwitch Grid.Row="1" IsChecked="{Binding HideObjectNavigator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Center" Content="{DynamicResource HideObjectNavigator}"/>
+        <controls:ToggleSwitch Grid.Row="1" IsChecked="{Binding HideToolbar,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Grid.Column="3" Content="{DynamicResource HideToolbar}"/>
+        <controls:ToggleSwitch Grid.Row="1" IsChecked="{Binding HideStatusBar,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Grid.Column="5" Content="{DynamicResource HideStatusBar}"/>
+
+        <ContentControl Grid.Row="3" Margin="0 0 10 0" Grid.ColumnSpan="6" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource SaveCancelButton}"/>
+    </Grid>
+</base:BaseWindow>

@@ -1,0 +1,55 @@
+﻿<base:BaseWindow x:Class="GAP.NotesView"
+        xmlns:base="clr-namespace:GAP.ExtendedControls" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:custom="http://nearcoding.com/controls"    
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="{DynamicResource Notes}"  Height="310" Width="440"  
+        Style="{StaticResource WindowDialogResize}" WindowStartupLocation="CenterScreen">
+    <Window.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding CancelCommand}"/>
+        <KeyBinding Key="A" Modifiers="Control" Command="{Binding AddNewNoteCommand}"/>
+    </Window.InputBindings>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource MaxHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource MinHeightRowDefinition}"/>
+            <RowDefinition Style="{StaticResource AutoHeightRowDefinition}"/>
+        </Grid.RowDefinitions>
+        <custom:ExtendedDataGrid HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedNote}" 
+                    Style="{StaticResource MetroDataGrid}" VerticalAlignment="Stretch" ItemsSource="{Binding NotesList}" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding EditNoteCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsNoteSelected, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.Header>
+                        <CheckBox IsChecked="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext.AllRecordsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </DataGridTemplateColumn.Header>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{DynamicResource Notes}" Binding="{Binding NotesText}" Width="*"/>
+                <DataGridTextColumn Header="{DynamicResource UpdatedOn}" Binding="{Binding UpdatedOn}" Width="160"/>
+            </DataGrid.Columns>
+        </custom:ExtendedDataGrid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MaxWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource MinWidthColumnDefinition}"/>
+                <ColumnDefinition Style="{StaticResource AutoWidthColumnDefinition}"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource MetroButton}" Content="{DynamicResource DeleteRecords}" Command="{Binding DeleteRecordsCommand}"/>
+            <Button Grid.Column="2" Style="{StaticResource MetroButton}" Content="{DynamicResource AddNew}" Command="{Binding AddNewNoteCommand}"/>
+            <Button Grid.Column="4" Style="{StaticResource ButtonCancel}" Content="Close [Esc]"/>
+        </Grid>
+    </Grid>
+</base:BaseWindow>

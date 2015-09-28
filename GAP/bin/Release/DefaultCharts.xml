@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<ArrayOfChart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Chart>
+    <ID>403b4b9e-e479-44fb-a586-eed4316abd5f</ID>
+    <IsEntitySelected>false</IsEntitySelected>
+    <DisplayIndex>0</DisplayIndex>
+    <Name>Logs</Name>
+    <Tracks>
+      <Track>
+        <ID>7afc50ec-8940-426a-bc42-7be7e2dd8e34</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>0</DisplayIndex>
+        <Name>Gamma Ray</Name>
+        <RefChart>403b4b9e-e479-44fb-a586-eed4316abd5f</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>cf45a284-d488-49c0-9934-65eb23842ad6</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>1</DisplayIndex>
+        <Name>Sonic-DT</Name>
+        <RefChart>403b4b9e-e479-44fb-a586-eed4316abd5f</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>66e61734-4569-4d2e-8230-03ed0b6c627d</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>2</DisplayIndex>
+        <Name>RHOB</Name>
+        <RefChart>403b4b9e-e479-44fb-a586-eed4316abd5f</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>db133ecd-150e-40ce-bc39-c961519ec08f</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>3</DisplayIndex>
+        <Name>Events</Name>
+        <RefChart>403b4b9e-e479-44fb-a586-eed4316abd5f</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>0000d5f5-8421-4bd3-ac3f-09e8aa17e069</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>4</DisplayIndex>
+        <Name>Other Logs</Name>
+        <RefChart>403b4b9e-e479-44fb-a586-eed4316abd5f</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+    </Tracks>
+    <Formations />
+  </Chart>
+  <Chart>
+    <ID>0f513391-3511-4539-ac42-0e81c8cd57f7</ID>
+    <IsEntitySelected>false</IsEntitySelected>
+    <DisplayIndex>1</DisplayIndex>
+    <Name>Overburden</Name>
+    <Tracks>
+      <Track>
+        <ID>b589fd54-c860-4bb8-85ee-4d199ab3e4e8</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>0</DisplayIndex>
+        <Name>Sonic-DT</Name>
+        <RefChart>0f513391-3511-4539-ac42-0e81c8cd57f7</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>97ff4dfd-1dac-4014-95a9-6e917910c4e9</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>1</DisplayIndex>
+        <Name>RHOB</Name>
+        <RefChart>0f513391-3511-4539-ac42-0e81c8cd57f7</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>cd556004-d31d-4dc7-9b9a-6457071510bd</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>2</DisplayIndex>
+        <Name>Gamma Ray</Name>
+        <RefChart>0f513391-3511-4539-ac42-0e81c8cd57f7</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>9f2fab0d-fc0b-4ad9-ae42-7880a1932ac9</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>3</DisplayIndex>
+        <Name>Overburden</Name>
+        <RefChart>0f513391-3511-4539-ac42-0e81c8cd57f7</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>228d3948-ad1a-4f70-aa70-7997dc8b54c8</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>4</DisplayIndex>
+        <Name>Lithology</Name>
+        <RefChart>0f513391-3511-4539-ac42-0e81c8cd57f7</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+    </Tracks>
+    <Formations />
+  </Chart>
+  <Chart>
+    <ID>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</ID>
+    <IsEntitySelected>false</IsEntitySelected>
+    <DisplayIndex>2</DisplayIndex>
+    <Name>Pore Pressure</Name>
+    <Tracks>
+      <Track>
+        <ID>c2f37b0c-f59a-4157-b6f7-4f7e0382602b</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>0</DisplayIndex>
+        <Name>Overburden</Name>
+        <RefChart>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>aafe422d-61d7-4c0b-be9b-f3a85e305acc</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>1</DisplayIndex>
+        <Name>RHOB-Gamma Ray</Name>
+        <RefChart>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>3aa9b30b-6eef-4b17-b3f7-da7257889b91</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>2</DisplayIndex>
+        <Name>Sonic-DT</Name>
+        <RefChart>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>329157f4-7f82-4fd6-82a0-e51c73fbc290</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>3</DisplayIndex>
+        <Name>Lithology-Events</Name>
+        <RefChart>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>bad9cc5a-77ad-4009-b64b-5bbf396b2f73</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>4</DisplayIndex>
+        <Name>Pore Pressure</Name>
+        <RefChart>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>0573558f-36f9-4b86-939a-4897e0d5939d</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>5</DisplayIndex>
+        <Name>Other Logs</Name>
+        <RefChart>ba2fdf4c-c3a3-4034-ac5f-5186f05df294</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+    </Tracks>
+    <Formations />
+  </Chart>
+  <Chart>
+    <ID>cac86407-6257-47f9-8e41-3ca609683e7b</ID>
+    <IsEntitySelected>false</IsEntitySelected>
+    <DisplayIndex>3</DisplayIndex>
+    <Name>Frac. Gradient</Name>
+    <Tracks>
+      <Track>
+        <ID>5bc57ef9-f781-4f08-b5c5-9eb315e0cf84</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>0</DisplayIndex>
+        <Name>Overburden</Name>
+        <RefChart>cac86407-6257-47f9-8e41-3ca609683e7b</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>c15c7d14-73eb-4bf0-be6c-1b062eaf73ac</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>1</DisplayIndex>
+        <Name>Pore Pressure</Name>
+        <RefChart>cac86407-6257-47f9-8e41-3ca609683e7b</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>517f26e6-2af2-4f32-a23d-252dc26eeaed</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>2</DisplayIndex>
+        <Name>Lithology-Events</Name>
+        <RefChart>cac86407-6257-47f9-8e41-3ca609683e7b</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>09eb88fe-4ac0-4145-a993-c09e3ee16cb3</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>3</DisplayIndex>
+        <Name>Frac. Gradient</Name>
+        <RefChart>cac86407-6257-47f9-8e41-3ca609683e7b</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+      <Track>
+        <ID>835ad227-52ae-4619-a05c-ad4204adbaf6</ID>
+        <IsEntitySelected>false</IsEntitySelected>
+        <DisplayIndex>4</DisplayIndex>
+        <Name>Sonic-Gamma Ray-RHOB</Name>
+        <RefChart>cac86407-6257-47f9-8e41-3ca609683e7b</RefChart>
+        <Width>400</Width>
+        <Curves />
+        <Lithologies />
+      </Track>
+    </Tracks>
+    <Formations />
+  </Chart>
+</ArrayOfChart>
